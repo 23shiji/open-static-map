@@ -6,18 +6,23 @@
     template(v-for="dx in [-1, 0, 1]")
       template(v-for="dy in [-1, 0, 1]")
         img#map_img(
+          v-show="image_loaded",
           src="map/0/0.svg",
           :style="image_style(dx, dy)",
           :width="img_w",
-          :height="img_h"
+          :height="img_h",
+          @load="image_loaded = true"
           )
+        h1(v-if="!image_loaded") Loading
     controller#controller
+    img#cross(src="dist/cross.svg")
 </template>
 
 <script>
 import axios from 'axios'
 import bus from './bus'
 import Controller from './components/Controller.vue'
+import './assets/cross.svg'
 import {
   lng2x,
   lat2y,
@@ -28,7 +33,8 @@ export default {
   name: 'app',
   data () {
     return {
-      loading: true,
+      meta_loaded: false,
+      image_loaded: false,
       x: 0,
       y: 0,
       z: 100,
@@ -63,6 +69,7 @@ export default {
       return `top: ${this.img_y - this.img_h * dy}px; left: ${this.img_x - this.img_w * dx}px;`;
     },
     load_meta(){
+      this.meta_loaded = false
       axios
         .get('map/0/meta.json')
         .then(res => res.data)
@@ -78,9 +85,9 @@ export default {
           this.zoom = this.zoom_limit
           this.origin_width   = width
           this.origin_height  = height
-          this.loading = false
           this.x = width / 2
           this.y = height / 2
+          this.meta_loaded = true
         })
     },
     init_events(){
@@ -137,4 +144,14 @@ export default {
   top: 0;
   width: 5rem;
 }
+
+#cross{
+  position: fixed;
+  width:  2rem;
+  height: 2rem;
+  left: calc(50vw - 1rem);
+  top: calc(50vh - 1rem);
+  opacity: 0.5;
+}
+
 </style>
