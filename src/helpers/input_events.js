@@ -87,8 +87,8 @@ export default {
   @disabled_in_animation
   moving([x, y]){
     if(!mouse_move_stat.moving) return;
-    this.x -= (x - mouse_move_stat.x) / this.zoom
-    this.y -= (y - mouse_move_stat.y) / this.zoom
+    this.dmove([ -(x - mouse_move_stat.x) / this.zoom, 0 ])
+    this.dmove([ 0, -(y - mouse_move_stat.y) / this.zoom ])
     mouse_move_stat.x = x
     mouse_move_stat.y = y
   },
