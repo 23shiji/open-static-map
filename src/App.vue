@@ -1,8 +1,6 @@
 <template lang="jade">
 #app
-  template(v-if="loading")
-    h1 Loading
-  template(v-else)
+  template(v-if="meta_loaded")
     template(v-for="dx in [-1, 0, 1]")
       template(v-for="dy in [-1, 0, 1]")
         img#map_img(
@@ -16,12 +14,15 @@
         h1(v-if="!image_loaded") Loading
     controller#controller
     img#cross(src="dist/cross.svg")
+
+  template(v-else)
+    h1 Loading
 </template>
 
 <script>
 import axios from 'axios'
 import bus from './bus'
-import Controller from './components/Controller.vue'
+import Controller from './components/Controller'
 import './assets/cross.svg'
 import {
   lng2x,
@@ -29,6 +30,8 @@ import {
   spher2rect,
   rect2spher
 } from './helpers/position'
+
+
 export default {
   name: 'app',
   data () {
@@ -42,7 +45,7 @@ export default {
       zoom_limit: 0,
       img_meta: null,
       origin_width: 0,
-      origin_height: 0 
+      origin_height: 0
     }
   },
   components: {
@@ -68,6 +71,12 @@ export default {
     image_style(dx, dy){
       return `top: ${this.img_y - this.img_h * dy}px; left: ${this.img_x - this.img_w * dx}px;`;
     },
+    dmove(dx, dy){
+      let nx = this.x + dx
+      let ny = this.y + dy
+      this.x = (nx + this.origin_width) % this.origin_width
+      this.y = (ny + this.origin_height) % this.origin_height
+    },
     load_meta(){
       this.meta_loaded = false
       axios
@@ -78,7 +87,7 @@ export default {
           this.img_meta = meta
           let width = meta.x.to - meta.x.from
           let height = meta.y.to - meta.y.from
-          this.zoom_limit = Math.min(
+          this.zoom_limit = Math.max(
             window.innerWidth / width,
             window.innerHeight / height
           )
@@ -93,25 +102,26 @@ export default {
     init_events(){
       const MOVE_DIST = 100
       bus.$on('navi_key', evt => {
+        let mvd = MOVE_DIST / this.zoom
         switch(evt){
         case 'ZOOM_IN':
-          this.zoom *= 2
+          this.zoom *= 1.5
         break
         case 'ZOOM_OUT':
           if(this.zoom > this.zoom_limit)
-            this.zoom /= 2
+            this.zoom /= 1.5
         break
         case 'LEFT':
-          this.x -= MOVE_DIST / this.zoom
+          this.dmove(-mvd, 0)
         break
         case 'RIGHT':
-          this.x += MOVE_DIST / this.zoom
+          this.dmove(+mvd, 0)
         break
         case 'UP':
-          this.y -= MOVE_DIST / this.zoom
+          this.dmove(0, -mvd)
         break
         case 'DOWN':
-          this.y += MOVE_DIST / this.zoom
+          this.dmove(0, +mvd)
         break
         }
       })

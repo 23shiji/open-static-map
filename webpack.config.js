@@ -51,13 +51,18 @@ module.exports = {
           use: ["css-loader"]
         })
       },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      }
     ]
   },
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     },
-    extensions: ['*', '.js', '.vue', '.json']
+    extensions: ['*', '.js', '.vue', '.json', '.ts']
   },
   devServer: {
     historyApiFallback: true,

@@ -1,0 +1,10 @@
+map:
+  width: 6243
+  height: 3121
+layers:
+  - items:
+    - type: image
+      path: map/0/0.svg
+      data:
+        width:  6243
+        height: 3121
