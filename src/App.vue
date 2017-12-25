@@ -4,12 +4,18 @@
     template(v-for="dx in [-1, 0, 1]")
       template(v-for="dy in [-1, 0, 1]")
         img#map_img(
+          @dblclick="dblclick_aim($event)",
+          @wheel="wheel_zoom($event)",
+          @mousedown="on_mouse_down($event)",
+          @mouseup="on_mouse_up($event)",
+          @mousemove="on_mouse_move($event)",
           v-show="image_loaded",
           src="map/0/0.svg",
           :style="image_style(dx, dy)",
           :width="img_w",
           :height="img_h",
-          @load="image_loaded = true"
+          @load="image_loaded = true",
+          ondragstart="return false;"
           )
         h1(v-if="!image_loaded") Loading
     controller#controller
@@ -22,6 +28,7 @@
 <script>
 import axios from 'axios'
 import bus from './bus'
+import input_events from './helpers/input_events'
 import Controller from './components/Controller'
 import './assets/cross.svg'
 import {
@@ -71,11 +78,27 @@ export default {
     image_style(dx, dy){
       return `top: ${this.img_y - this.img_h * dy}px; left: ${this.img_x - this.img_w * dx}px;`;
     },
-    dmove(dx, dy){
+    ...input_events,
+    dmove([dx, dy]){
       let nx = this.x + dx
       let ny = this.y + dy
       this.x = (nx + this.origin_width) % this.origin_width
       this.y = (ny + this.origin_height) % this.origin_height
+    },
+    dzoom(scale, center = null){
+      let z1 = this.zoom
+      let z2 = this.zoom * scale
+      if(z2 < this.zoom_limit) return;
+      let x = this.x
+      let y = this.y
+      if(center){
+        let [cx, cy] = center
+        let nx = ( (z2-z1) * cx + z1 * x ) / z2
+        let ny = ( (z2-z1) * cy + z1 * y ) / z2
+        this.x = nx
+        this.y = ny
+      }
+      this.zoom = z2
     },
     load_meta(){
       this.meta_loaded = false
@@ -98,37 +121,10 @@ export default {
           this.y = height / 2
           this.meta_loaded = true
         })
-    },
-    init_events(){
-      const MOVE_DIST = 100
-      bus.$on('navi_key', evt => {
-        let mvd = MOVE_DIST / this.zoom
-        switch(evt){
-        case 'ZOOM_IN':
-          this.zoom *= 1.5
-        break
-        case 'ZOOM_OUT':
-          if(this.zoom > this.zoom_limit)
-            this.zoom /= 1.5
-        break
-        case 'LEFT':
-          this.dmove(-mvd, 0)
-        break
-        case 'RIGHT':
-          this.dmove(+mvd, 0)
-        break
-        case 'UP':
-          this.dmove(0, -mvd)
-        break
-        case 'DOWN':
-          this.dmove(0, +mvd)
-        break
-        }
-      })
     }
   },
   created(){
-    this.init_events()
+    this.init_key_events()
     this.load_meta()
   }
 }
