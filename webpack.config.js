@@ -38,10 +38,16 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(jpe?g|png|gif|svg|eot|woff|ttf|svg|woff2?)$/,
+        test: /\.(jpe?g|png|gif|svg|eot|ttf|svg|woff2?)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]'
+          name: '[name].[ext]',
+          publicPath: function(x){
+            return 'dist/'+path.basename(x)
+          },
+          outputPath: function(x){
+            return 'dist/'+path.basename(x)
+          }
         }
       },
       {
@@ -55,6 +61,13 @@ module.exports = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.(scss)$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: ["css-loader", "resolve-url-loader", "sass-loader?sourceMap"]
+        })
       }
     ]
   },

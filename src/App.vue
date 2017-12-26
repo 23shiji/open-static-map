@@ -18,7 +18,7 @@
           ondragstart="return false;"
           )
         h1(v-if="!image_loaded") Loading
-    controller#controller
+    controller
     img#cross(src="dist/cross.svg")
 
   template(v-else)
@@ -142,13 +142,6 @@ export default {
 
 #map_img{
   position: fixed;
-}
-
-#controller{
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 5rem;
 }
 
 #cross{
