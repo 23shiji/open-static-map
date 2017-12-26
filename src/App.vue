@@ -9,6 +9,9 @@
           @mousedown="on_mouse_down($event)",
           @mouseup="on_mouse_up($event)",
           @mousemove="on_mouse_move($event)",
+          @touchstart.stop="on_touch_start",
+          @touchmove.stop="on_touch_move",
+          @touchend.stop="on_touch_end",
           v-show="image_loaded",
           src="map/0/0.svg",
           :style="image_style(dx, dy)",
@@ -138,10 +141,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  touch-action: none;
 }
 
 #map_img{
   position: fixed;
+  touch-action: manipulation;
 }
 
 #cross{

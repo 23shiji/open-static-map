@@ -43,10 +43,10 @@ module.exports = {
         options: {
           name: '[name].[ext]',
           publicPath: function(x){
-            return 'dist/'+path.basename(x)
+            return path.basename(x)
           },
           outputPath: function(x){
-            return 'dist/'+path.basename(x)
+            return path.basename(x)
           }
         }
       },

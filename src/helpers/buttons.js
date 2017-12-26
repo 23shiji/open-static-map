@@ -21,5 +21,5 @@ export const BUTTON_TABLE = [
   ['LEFT', null, 'RIGHT'],
   [null, 'DOWN', null],
   [null, null, null],
-  ['ZOOM_IN', null, 'ZOOM_OUT']
+  ['ZOOM_OUT', null, 'ZOOM_IN']
 ]

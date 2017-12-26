@@ -3,9 +3,9 @@ div#controller
   table
     tr(v-for="row in BUTTON_TABLE")
       template(v-for="col in row")
-        td(v-if="col")
-          button.btn-floating.btn-large.red(@click="press(col)") 
-            i.large.material-icons {{BUTTON_ICON[col]}}
+        td.navi-btn-container(v-if="col")
+          button.btn-floating.white.text-black.btn-medium(@click="press(col)") 
+            i.material-icons.black-text.medium {{BUTTON_ICON[col]}}
         td(v-else)
 </template>
 <script>
@@ -38,5 +38,8 @@ export default {
 }
 .navi-btn{
   background-color: white;
+}
+.navi-btn-container{
+  padding: 0;
 }
 </style>
