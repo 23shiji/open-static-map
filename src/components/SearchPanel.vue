@@ -36,7 +36,11 @@ export default {
     view(loc){
       let mp = new MapPos(this.$store.state.map_info)
       let center = mp.sphe2rect(loc.pos)
-      let dz = this.$store.state.map_info.view_zoom / this.$store.state.zoom
+      let zoom = loc.zoom ? 
+        Math.max(this.$store.state.map_info.view_zoom, loc.zoom.gte) : 
+        this.$store.state.map_info.view_zoom
+      zoom = Math.max(zoom, this.$store.state.zoom)
+      let dz = zoom / this.$store.state.zoom
       move_animation(center, dz, 25, 50)
       // this.$store.commit('move_to', center)
       // this.$store.commit('zoom_to', {zoom: , center})

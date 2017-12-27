@@ -22,7 +22,7 @@ export function load_config_files({commit, state}){
           temps = temps.concat(loc.template)
         }
         for(let template of temps){
-          let tags = loc.tags
+          let tags = loc.tags || []
           let temp = templates[template]
           let update = {}
           Object.assign(update, loc)

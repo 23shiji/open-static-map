@@ -17,7 +17,7 @@ div#map-view(
           map-image(
             :image_info  = "img_info"
           )
-    template(v-for="loc in $store.state.locations")
+    template(v-for="loc in ($store.state.query_locations && $store.state.query_locations.length ? $store.state.query_locations : $store.state.locations)")
       template(v-if="!loc.zoom || (loc.zoom.gte <= $store.state.zoom && $store.state.zoom <= loc.zoom.lte)")
         loc-pin(
           :loc  = "loc"

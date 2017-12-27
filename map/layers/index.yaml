@@ -6,11 +6,11 @@ map:
     y: 1560
   loc:
     lat:
-      from:  -180
-      to:     180
+      from:  -90
+      to:     90
     lng:
-      from: -90
-      to:    90
+      from: -180
+      to:    180
   view_zoom: 1.0
 layers:
   - id: default
