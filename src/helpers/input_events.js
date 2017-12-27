@@ -20,8 +20,16 @@ function page2map(p, s, v, z){
   return p + (s - v / 2) / z
 }
 
+function prevent_default(func){
+  return function(evt){
+    func.call(this, evt);
+    evt.preventDefault()
+  }
+}
+
+
 export default {
-  @disabled_in_animation
+  @prevent_default
   dblclick_aim(evt){
     let sx = evt.pageX
     let sy = evt.pageY
@@ -31,7 +39,7 @@ export default {
     let cy = page2map(this.y, sy, vh, this.zoom)
     move_animation.call(this, [cx, cy], 2, 25, 50)
   },
-  @disabled_in_animation
+  @prevent_default
   wheel_zoom(evt){
     let sx = evt.pageX
     let sy = evt.pageY
@@ -41,15 +49,19 @@ export default {
     let cy = page2map(this.y, sy, vh, this.zoom)
     this.dzoom(Math.pow(1.001, -evt.deltaY), [cx, cy])
   },
+  @prevent_default
   on_mouse_down(evt){
     this.start_moving([evt.pageX, evt.pageY])
   },
+  @prevent_default
   on_mouse_move(evt){
     this.moving([evt.pageX, evt.pageY])
   },
+  @prevent_default
   on_mouse_up(evt){
     this.stop_moving([evt.pageX, evt.pageY])
   },
+  @prevent_default
   on_touch_start(evt){
     if(evt.touches.length == 1){
       let t = evt.touches[0]
@@ -69,6 +81,7 @@ export default {
       touch_zoom_stat.moving = true
     }
   },
+  @prevent_default
   on_touch_move(evt){
     if(evt.touches.length == 1){
       let t = evt.touches[0]
@@ -90,6 +103,7 @@ export default {
       touch_zoom_stat.dist = d
     }
   },
+  @prevent_default
   on_touch_end(evt){
     if(evt.touches.length == 1){
       let t = evt.touches[0]
