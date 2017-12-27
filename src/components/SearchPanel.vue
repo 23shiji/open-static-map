@@ -67,6 +67,19 @@ export default {
 #results-list{
   overflow-x: hidden;
   overflow-y: scroll;
-  max-height: calc(50vh);
+  max-height: calc(25vh);
 }
+
+@media (max-width: 500px) {
+  #results-list{
+    max-height: calc(25vh);
+  }
+}
+
+@media (min-width: 500px) {
+  #results-list{
+    max-height: calc(50vh);
+  }
+}
+
 </style>

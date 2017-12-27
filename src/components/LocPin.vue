@@ -5,8 +5,14 @@ div.loc_pin(ref="pinDom", :style="pin_style")
     :height="loc.icon.height", 
     :style="icon_style", 
     :src="img_path",
-    @click="show")
-  div.loc_name(:style="name_style", @click="show")
+    @click="show",
+    @touchend="show"
+    )
+  div.loc_name(
+    :style="name_style", 
+    @click="show",
+    @touchend="show"
+    )
     | {{ loc.name }}
 </template>
 <script>
