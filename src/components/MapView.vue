@@ -27,7 +27,7 @@ div#map-view(
 <script>
 import bus    from '../bus'
 import pos_patch from '../helpers/pos_patch'
-import input_events from '../helpers/input_events'
+import * as input_events from '../helpers/input_events'
 import MapImage from './MapImage'
 import LocPin from './LocPin'
 import '../assets/cross.svg'
