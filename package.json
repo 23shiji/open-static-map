@@ -20,6 +20,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "jade": "^1.11.0",
     "jquery": "^3.2.1",
+    "js-yaml": "^3.10.0",
     "materialize-css": "^0.100.2",
     "node-sass": "^4.7.2",
     "resolve-url-loader": "^2.2.1",
@@ -28,7 +29,9 @@
     "ts-loader": "^3.2.0",
     "typescript": "^2.6.2",
     "vue": "^2.5.11",
-    "webpack-material-design-icons": "^0.1.0"
+    "vuex": "^3.0.1",
+    "webpack-material-design-icons": "^0.1.0",
+    "yaml-loader": "^0.5.0"
   },
   "browserslist": [
     "> 1%",

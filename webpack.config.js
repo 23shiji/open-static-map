@@ -68,6 +68,10 @@ module.exports = {
           fallback: "style-loader",
           use: ["css-loader", "resolve-url-loader", "sass-loader?sourceMap"]
         })
+      },
+      {
+        test: /\.yaml$/,
+        use: ['json-loader', 'yaml-loader']
       }
     ]
   },

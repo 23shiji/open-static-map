@@ -1,0 +1,6 @@
+default:
+  width:  20
+  height: 20
+  offset:
+    x: -10
+    y: -30

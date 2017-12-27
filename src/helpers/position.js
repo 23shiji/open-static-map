@@ -1,11 +1,10 @@
-export class PositionTrnasformer{
-  constructor({ww, wh, mw, mh}){
-    this.ww = ww
-    this.wh = wh
-    this.mw = mw
-    this.mh = mh
+export class MapPos{
+  constructor(map_info){
+    this.map_info
+    this.width = map_info.width
+    this.height = map_info.height
+    this.lat_range = map_info.loc.lat
+    this.lng_range = map_info.loc.lng
   }
-  map_x_to_screen_x(mx){
-    
-  }
+  
 }

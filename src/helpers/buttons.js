@@ -17,9 +17,7 @@ export const BUTTON_ICON = {
 }
 
 export const BUTTON_TABLE = [
-  [null, 'UP', null],
-  ['LEFT', null, 'RIGHT'],
-  [null, 'DOWN', null],
-  [null, null, null],
-  ['ZOOM_OUT', null, 'ZOOM_IN']
+  [null,    'UP', null, null, 'ZOOM_IN'],
+  ['LEFT',  null, 'RIGHT', null, null],
+  [null,    'DOWN', null, null, 'ZOOM_OUT'],
 ]

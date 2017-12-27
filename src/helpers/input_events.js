@@ -152,15 +152,15 @@ export default {
   },
   @disabled_in_animation
   init_key_events(){
-    const MOVE_DIST = 100
+    const MOVE_DIST = 300
     bus.$on('navi_key', evt => {
       let mvd = MOVE_DIST / this.zoom
       switch(evt){
       case 'ZOOM_IN':
-        move_animation.call(this, [this.x, this.y], 1.5, 10, 10)
+        move_animation.call(this, [this.x, this.y], 2, 10, 10)
       break
       case 'ZOOM_OUT':
-        move_animation.call(this, [this.x, this.y], 0.667, 10, 10)
+        move_animation.call(this, [this.x, this.y], 0.5, 10, 10)
       break
       case 'LEFT':
         this.key_dmove(-mvd, 0)

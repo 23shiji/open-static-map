@@ -1,0 +1,11 @@
+- id: default
+  name: 默认标签组
+  locations:
+  - id: null_island
+    desc: map/locations/descriptions/null_island.md
+    name: Null Island
+    icon: default
+    pos:
+      lat: 0
+      lng: 0
+    tags: [都市传说]

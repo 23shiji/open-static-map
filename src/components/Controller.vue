@@ -1,5 +1,5 @@
 <template lang="jade">
-div#controller
+div#navi-bar
   table
     tr(v-for="row in BUTTON_TABLE")
       template(v-for="col in row")
@@ -30,11 +30,10 @@ export default {
 }
 </script>
 <style>
-#controller{
-  position: fixed;
-  left: 1rem;
-  top: 1rem;
-  width: 5rem;
+#navi-bar{
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
 }
 .navi-btn{
   background-color: white;
