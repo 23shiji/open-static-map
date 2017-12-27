@@ -1,11 +1,24 @@
-- id: default
-  name: 默认标签组
-  locations:
+templates:
+  default: # 模板名
+    icon: default # 表签名 标签信息见 map/icons/index.yaml
+    tags: [标准模板]
+    zoom: # 可选
+      gte: 0.0000001
+      lte: 100
+locations:
   - id: null_island
-    desc: map/locations/descriptions/null_island.md
+    desc: map/locations/descriptions/null_island.md # 描述文件地址 Markdown
     name: Null Island
-    icon: default
-    pos:
+    template: default # 选中的模板内容会自动插入
+    pos: # 坐标(球面)
       lat: 0
       lng: 0
     tags: [都市传说]
+  - id: site_12
+    desc: map/locations/descriptions/site_12.md # 描述文件地址 Markdown
+    name: Site-12
+    template: [default] # 选中的模板内容会自动插入
+    pos: # 坐标(球面)
+      lat: 10
+      lng: 10
+    tags: ["SCP"]

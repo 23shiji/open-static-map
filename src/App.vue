@@ -5,19 +5,25 @@
       map-view
     template(v-if="!$store.state.data_loaded")
       h1 Loading
-  nav.blue-grey.lighten-2
-    .nav-wrapper
-      span.brand-logo {{title}}
+  search-panel
+  loc-desc(v-if="$store.state.current_location")
+  controller
 </template>
 
 <script>
 import axios from 'axios'
 import MapView from './components/MapView'
+import Controller from './components/Controller'
+import LocDesc from './components/LocDesc'
+import SearchPanel from './components/SearchPanel'
 
 export default {
   name: 'app',
   components: {
-    MapView
+    MapView,
+    Controller,
+    LocDesc,
+    SearchPanel
   },
   computed: {
     title: {
@@ -48,7 +54,6 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   touch-action: none;
   margin: 0;

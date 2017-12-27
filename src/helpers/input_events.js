@@ -1,4 +1,8 @@
 import bus from '../bus'
+import {
+  disabled_in_animation,
+  move_animation
+} from '../helpers/animation'
 
 const mouse_move_stat = {
   x: null,
@@ -10,41 +14,6 @@ const touch_zoom_stat = {
   moving: false,
   center: null,
   dist: 0
-}
-
-const animation_stat = {
-  timer: null,
-  counter: 0
-}
-
-function disabled_in_animation(func){
-  if(animation_stat.timer) return;
-  return function(...args){
-    func.call(this, ...args)
-  }
-}
-
-function move_animation([tx, ty], dz, n_times, time){
-  if(animation_stat.timer){
-    clearInterval(animation_stat.timer)
-    animation_stat.timer = null
-  }
-  const dx = (tx - this.x) / n_times
-  const dy = (ty - this.y) / n_times
-  const cent = [this.x ,this.y]
-  const sz = Math.exp( Math.log(dz) / n_times)
-  animation_stat.counter = 0
-  animation_stat.timer = setInterval(()=>{
-    this.dzoom(sz)
-    // this.x += dx
-    // this.y += dy
-    this.dmove([dx, dy])
-    animation_stat.counter++
-    if(animation_stat.counter > n_times){
-      clearInterval(animation_stat.timer)
-      animation_stat.timer = null
-    }
-  }, time/n_times)
 }
 
 function page2map(p, s, v, z){

@@ -1,6 +1,11 @@
 default:
-  width:  20
-  height: 20
+  path: map/icons/default.svg
+  width:  30
+  height: 30
   offset:
-    x: -10
+    x: -15
     y: -30
+  style:
+    name_width: 80 # px
+    name_style: "color=red;"
+    icon_style:

@@ -12,20 +12,24 @@ div#map-view(
 )
   #img-container
     template(v-for="layer in $store.state.layers")
-      template(v-if="layer.zoom.gte <= $store.state.zoom && $store.state.zoom <= layer.zoom.lte")
+      template(v-if="!layer.zoom || (layer.zoom.gte <= $store.state.zoom && $store.state.zoom <= layer.zoom.lte)")
         template(v-for="img_info in layer.images")
           map-image(
             :image_info  = "img_info"
           )
-  controller
+    template(v-for="loc in $store.state.locations")
+      template(v-if="!loc.zoom || (loc.zoom.gte <= $store.state.zoom && $store.state.zoom <= loc.zoom.lte)")
+        loc-pin(
+          :loc  = "loc"
+        )
   img#cross(src="dist/cross.svg")
 </template>
 <script>
 import bus    from '../bus'
 import pos_patch from '../helpers/pos_patch'
 import input_events from '../helpers/input_events'
-import Controller from '../components/Controller'
 import MapImage from './MapImage'
+import LocPin from './LocPin'
 import '../assets/cross.svg'
 export default {
   name: 'map-view',
@@ -34,8 +38,8 @@ export default {
     }
   },
   components: {
-    Controller,
-    MapImage
+    MapImage,
+    LocPin
   },
   computed: {
     ...pos_patch,

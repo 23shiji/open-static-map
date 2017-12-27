@@ -21,6 +21,7 @@
     "jade": "^1.11.0",
     "jquery": "^3.2.1",
     "js-yaml": "^3.10.0",
+    "marked": "^0.3.9",
     "materialize-css": "^0.100.2",
     "node-sass": "^4.7.2",
     "resolve-url-loader": "^2.2.1",

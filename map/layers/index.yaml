@@ -11,6 +11,7 @@ map:
     lng:
       from: -90
       to:    90
+  view_zoom: 1.0
 layers:
   - id: default
     name: 默认图层
