@@ -1,12 +1,12 @@
 templates:
   default: # 模板名
-    icon: default # 表签名 标签信息见 map/icons/index.yaml
+    icon: default_icon # 表签名 标签信息见 map/icons/index.yaml
     tags: [标准模板]
     zoom: # 可选
       gte: 0.0000001
       lte: 100
   unknown:
-    icon: default # 表签名 标签信息见 map/icons/index.yaml
+    icon: unknown_icon # 表签名 标签信息见 map/icons/index.yaml
     tags: [未登记地点]
     desc: map/locations/descriptions/unknown.md
     zoom: # 可选
