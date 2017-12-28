@@ -1,11 +1,10 @@
 <template lang="jade">
 div
   template(v-for="dx in [-1, 0, 1]")
-      template(v-for="dy in [-1, 0, 1]")
         img#map_img(
           v-show= "image_loaded",
           :src=   "image_info.path",
-          :style= "image_style(dx, dy)",
+          :style= "image_style(dx, 0)",
           :width= "img_w",
           :height="img_h",
           @load=  "image_loaded = true",
