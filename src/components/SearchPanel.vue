@@ -6,8 +6,7 @@ div
         .input-field.col.s12.m12.l12
           input.validate#searchQuery(
             v-model="$store.state.search_text",
-            @input="search($store.state.search_text)",
-            placeholder="keywords, tag:default, ...", 
+            @input="search($store.state.search_text)", 
             type="text"
           )
           label(for="searchQuery") Search
@@ -27,8 +26,8 @@ div
             | CLEAR
     span#hide-btn(@click="show = false")
       i.material-icons.small call_made
-  a.btn-floating.btn-large.waves-effect.waves-light.white#search-btn(v-else, @click="show=true")
-    i.material-icons.black-text search
+  a.btn-floating.btn-large.waves-effect.waves-light#search-btn(v-else, @click="show=true", :class="{'red': $store.state.search_text, 'white': !$store.state.search_text}")
+    i.material-icons(:class="{'white-text': $store.state.search_text, 'black-text': !$store.state.search_text}") search
 </template>
 <script>
 import {MapPos} from '../helpers/map_pos'
