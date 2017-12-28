@@ -3,6 +3,8 @@
   #map-container
     template(v-show="$store.state.data_loaded")
       map-view
+      a#logo-container
+        img(src="logo.png")
       status-panel
       search-panel
       controller
@@ -69,5 +71,17 @@ export default {
 nav{
   z-index: 1000;
   position: fixed;
+}
+#logo-container{
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+}
+
+a#logo-container:link, a#logo-container:visited {
+  opacity: 0.5;
+}
+a#logo-container:hover, a#logo-container:active {
+  opacity: 0.25;
 }
 </style>
