@@ -1,25 +1,34 @@
 <template lang="jade">
-div#search_panel.z-depth-3.white
-  .container
-    .row
-      .input-field.col.s12.m12.l12
-        input.validate#searchQuery(
-          v-model="$store.state.search_text",
-          @input="search($store.state.search_text)",
-          placeholder="keywords, tag:default, ...", 
-          type="text"
-        )
-        label(for="searchQuery") Search
-    .row(v-if="$store.state.query_locations")
-      #results-list.collection.col.s12.m12.l12
-        template(v-if="$store.state.query_locations.length")
-          template(v-for="loc in $store.state.query_locations")
-            .collection-item.avatar(@click="view(loc)")
-              img.circle.loc-icon-collection(:src="loc.icon.path")
-              span.title {{loc.name}}
-              p {{loc.tags.join(", ")}}
-        .collection-item(v-else)
-          span.title 没有相符的结果
+div
+  div#search_panel.z-depth-3.white(v-if="show")
+    .container
+      .row
+        .input-field.col.s12.m12.l12
+          input.validate#searchQuery(
+            v-model="$store.state.search_text",
+            @input="search($store.state.search_text)",
+            placeholder="keywords, tag:default, ...", 
+            type="text"
+          )
+          label(for="searchQuery") Search
+      template(v-if="$store.state.query_locations")
+        .row
+          #results-list.collection.col.s12.m12.l12
+            template(v-if="$store.state.query_locations.length")
+              template(v-for="loc in $store.state.query_locations")
+                .collection-item.avatar(@click="view(loc)")
+                  img.circle.loc-icon-collection(:src="loc.icon.path")
+                  span.title {{loc.name}}
+                  p {{loc.tags.join(", ")}}
+            .collection-item(v-else)
+              span.title 没有相符的结果
+        .row
+          button.btn.col.s3.m3.l3(@click="$store.dispatch('visiable_search_reset')")
+            | CLEAR
+    span#hide-btn(@click="show = false")
+      i.material-icons.small call_made
+  a.btn-floating.btn-large.waves-effect.waves-light.white#search-btn(v-else, @click="show=true")
+    i.material-icons.black-text search
 </template>
 <script>
 import {MapPos} from '../helpers/map_pos'
@@ -27,6 +36,7 @@ import {move_animation} from '../helpers/animation'
 export default {
   data(){
     return {
+      show: false
     }
   },
   methods: {
@@ -50,15 +60,17 @@ export default {
 }
 </script>
 <style>
-#search_panel{
-  padding-top: 1rem;
+#search-btn, #search_panel{
   position: fixed;
   right:  1rem;
   top:    1rem;
+  z-index: 100;
+}
+#search_panel{
+  padding-top: 1rem;
   width: 24rem;
   max-width: calc(100vw - 2rem);
   max-height: calc(100vh - 2rem);
-  z-index: 100;
 }
 .loc-icon-collection{
   width: 2rem;
@@ -67,9 +79,10 @@ export default {
 #results-list{
   overflow-x: hidden;
   overflow-y: scroll;
-  max-height: calc(25vh);
+  max-height: calc(50vh);
 }
 
+/*
 @media (max-width: 500px) {
   #results-list{
     max-height: calc(25vh);
@@ -81,5 +94,15 @@ export default {
     max-height: calc(50vh);
   }
 }
+*/
+#hide-btn{
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 0.5rem;
+}
 
+#searchQuery{
+  position: inline;
+}
 </style>

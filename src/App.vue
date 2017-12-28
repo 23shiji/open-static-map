@@ -3,11 +3,12 @@
   #map-container
     template(v-show="$store.state.data_loaded")
       map-view
+      status-panel
+      search-panel
+      controller
+      loc-desc(v-if="$store.state.current_location")
     template(v-if="!$store.state.data_loaded")
       h1 Loading
-  search-panel
-  loc-desc(v-if="$store.state.current_location")
-  controller
 </template>
 
 <script>
@@ -16,6 +17,7 @@ import MapView from './components/MapView'
 import Controller from './components/Controller'
 import LocDesc from './components/LocDesc'
 import SearchPanel from './components/SearchPanel'
+import StatusPanel from './components/StatusPanel'
 
 export default {
   name: 'app',
@@ -23,7 +25,8 @@ export default {
     MapView,
     Controller,
     LocDesc,
-    SearchPanel
+    SearchPanel,
+    StatusPanel
   },
   computed: {
     title: {

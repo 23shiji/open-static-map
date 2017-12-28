@@ -45,3 +45,8 @@ export function visiable_search({commit, dispatch}, s){
   commit('set_search_text', s)
   dispatch('search', s)
 }
+
+export function visiable_search_reset({commit, dispatch}){
+  commit('set_search_text', '')
+  dispatch('search', '')
+}

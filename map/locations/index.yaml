@@ -10,7 +10,7 @@ templates:
     tags: [未登记地点]
     desc: map/locations/descriptions/unknown.md
     zoom: # 可选
-      gte: 0.5
+      gte: 5
       lte: 100
 locations:
 - id: null_island

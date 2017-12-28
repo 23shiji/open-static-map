@@ -2,11 +2,9 @@
 div#locDesc.z-depth-4.white
   template(v-if="$store.state.location_desc")
     h1 {{$store.state.current_location.name}}
-    p
-      span TAGS:
+    div
       template(v-for="(t, index) in $store.state.current_location.tags")
-        span(v-if="index != 0") , 
-        a(@click="view_tag(t)") {{t}}
+        .chip(@click="view_tag(t)") {{t}}
       
     div(v-html="$store.state.location_desc")
   .preloader-wrapper.big.active(v-else)
