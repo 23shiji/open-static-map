@@ -25,6 +25,7 @@ export default {
 </script>
 <style>
 .markdown-view{
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: scroll;
 }
 </style>

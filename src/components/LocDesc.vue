@@ -1,10 +1,10 @@
 <template lang="jade">
 div#locDesc.z-depth-4.white
-  h1 {{$store.state.current_location.name}}
+  h4 {{$store.state.current_location.name}}
   div
     template(v-for="(t, index) in $store.state.current_location.tags")
       .chip(@click="view_tag(t)") {{t}}
-  markdown-view#mdv(:markdown="$store.state.location_desc")
+    markdown-view#mdv(:markdown="$store.state.location_desc")
   div#desc_close_btn(@click="close")
     i.material-icons.medium close
 </template>
@@ -35,6 +35,7 @@ export default {
   left: 1rem;
   top: 1rem;
   max-width: calc(100% - 2rem);
+  max-height: calc(100% - 2rem);
   width: 40rem;
   z-index: 105;
   padding: 2rem;
@@ -45,7 +46,8 @@ export default {
   top: 0;
 }
 #mdv{
-  max-height: 70%;
-  overflow: auto;
+  max-height:   60vh;
+  overflow-x:   auto;
+  overflow-y:   auto;
 }
 </style>
