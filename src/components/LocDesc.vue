@@ -1,11 +1,10 @@
 <template lang="jade">
 div#locDesc.z-depth-4.white
+  h1 {{$store.state.current_location.name}}
+  div
+    template(v-for="(t, index) in $store.state.current_location.tags")
+      .chip(@click="view_tag(t)") {{t}}
   template(v-if="$store.state.location_desc")
-    h1 {{$store.state.current_location.name}}
-    div
-      template(v-for="(t, index) in $store.state.current_location.tags")
-        .chip(@click="view_tag(t)") {{t}}
-      
     div(v-html="$store.state.location_desc")
   .preloader-wrapper.big.active(v-else)
     .spinner-layer.spinner-blue-only

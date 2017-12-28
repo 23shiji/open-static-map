@@ -12,13 +12,14 @@ div#map-view(
 )
   #img-container
     template(v-for="layer in $store.state.layers")
-      template(v-if="!layer.zoom || (layer.zoom.gte <= $store.state.zoom && $store.state.zoom <= layer.zoom.lte)")
+      template(v-if="display_layer(layer)")
         template(v-for="img_info in layer.images")
           map-image(
+            v-if="image_visiable(img_info)",
             :image_info  = "img_info"
           )
     template(v-for="loc in ($store.state.query_locations && $store.state.query_locations.length ? $store.state.query_locations : $store.state.locations)")
-      template(v-if="!loc.zoom || (loc.zoom.gte <= $store.state.zoom && $store.state.zoom <= loc.zoom.lte)")
+      template(v-if="display_loc(loc)")
         loc-pin(
           :loc  = "loc"
         )
@@ -28,6 +29,7 @@ div#map-view(
 import bus    from '../bus'
 import pos_patch from '../helpers/pos_patch'
 import * as input_events from '../helpers/input_events'
+import * as displayed_range from '../helpers/displayed_range'
 import MapImage from './MapImage'
 import LocPin from './LocPin'
 import '../assets/cross.svg'
@@ -46,6 +48,7 @@ export default {
   },
   methods: {
     ...input_events,
+    ...displayed_range,
     dmove([dx, dy]){
       let nx = this.x + dx
       let ny = this.y + dy
@@ -56,6 +59,16 @@ export default {
         zoom: this.zoom * scale, 
         center
       })
+    },
+    display_loc(loc){
+      let {zoom} = this.$store.state
+      return ((!loc.zoom || 
+        (loc.zoom.gte <= zoom && zoom <= loc.zoom.lte)) &&
+        this.location_visiable(loc))
+    },
+    display_layer(layer){
+      let {zoom} = this.$store.state
+      return !layer.zoom || (layer.zoom.gte <= zoom && zoom <= layer.zoom.lte)
     }
   },
   created(){

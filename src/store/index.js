@@ -24,6 +24,16 @@ export default new Vuex.Store({
     icons: null,
     search_query: null
   },
+  getters: {
+    displayed_map_width(state){
+      let vw = window.innerWidth
+      return vw / state.zoom
+    },
+    displayed_map_height(state){
+      let vh = window.innerHeight
+      return vh / state.zoom
+    }
+  },
   mutations,
   actions
 })
