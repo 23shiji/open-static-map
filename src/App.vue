@@ -3,8 +3,12 @@
   #map-container
     template(v-show="$store.state.data_loaded")
       map-view
-      a#logo-container
-        img(src="logo.png")
+      template(v-if="$store.state.map_info && $store.state.map_info.logo")
+        a#logo-container(
+          :href="$store.state.map_info.logo.url",
+          target="_blank"  
+        )
+          img(:src="$store.state.map_info.logo.src")
       status-panel
       search-panel
       controller
@@ -78,10 +82,10 @@ nav{
   left: 1rem;
 }
 
-a#logo-container:link, a#logo-container:visited {
-  opacity: 0.5;
+a#logo-container, a#logo-container:link, a#logo-container:visited {
+  opacity: 0.25;
 }
 a#logo-container:hover, a#logo-container:active {
-  opacity: 0.25;
+  opacity: 0.5;
 }
 </style>
