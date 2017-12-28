@@ -47,7 +47,7 @@ export default {
   methods: {
   },
   created(){
-    this.title = 'Yining'
+    this.title = 'Yipolis Republic'
   }
 }
 </script>

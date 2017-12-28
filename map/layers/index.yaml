@@ -19,7 +19,7 @@ layers:
       gte: 0.0001
       lte: 10000
     images:
-    - path: map/layers/layer_default/base.svg
+    - path: map/layers/layer_default/map.min.svg
       width:  6243
       height: 3121
       offset:
