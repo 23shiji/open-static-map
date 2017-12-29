@@ -2,18 +2,10 @@ export function data_loaded(state) {
   state.data_loaded = true
 }
 
-export function move_to(state, [nx, ny]){
-  state.x = (nx + state.map_width) %  state.map_width
-  state.y = (ny + state.map_height) % state.map_height
-}
-
 export function set_map_info(state, map){
   state.map_width = map.width
   state.map_height = map.height
-  state.zoom = Math.max(
-    window.innerWidth / map.width,
-    window.innerHeight / map.height
-  )
+  state.zoom = window.innerHeight / map.height * 1.1
   state.zoom_limit = state.zoom / 2
   state.x = map.center.x
   state.y = map.center.y
