@@ -101,10 +101,10 @@ export default {
 }
 #cross{
   position: absolute;
-  width:  2rem;
-  height: 2rem;
-  left: calc(50% - 1rem);
-  top: calc(50% - 1rem);
-  opacity: 0.5;
+  width:  1rem;
+  height: 1rem;
+  left: calc(50% - 0.5rem);
+  top: calc(50% - 0.5rem);
+  opacity: 0.3;
 }
 </style>
