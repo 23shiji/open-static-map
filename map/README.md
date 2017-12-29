@@ -78,6 +78,9 @@ layers: # 图层
       offset: # 相对地图左上角的偏移量，未经缩放
         x: 0
         y: 0
+    zoom: # 在此缩放范围内显示
+      gte: 0.0000001 # 高于此值
+      lte: 100000000 # 低于此值
 ```
 
 # 地标配置文件
@@ -146,6 +149,11 @@ unknown:
     lat: 0
     lng: 0
   tags: [都市传说]
+  pin: default      # 地标样式
+  tags: [标准模板]   # 标签，可用于搜索
+  zoom: # 在此缩放范围内显示， 可选， 当被搜索但未进入范围时只显示图标
+    gte: 0.0000001
+    lte: 10000
 # 地标2
 - desc: map/locations/descriptions/site_12.md
   name: Site-12
