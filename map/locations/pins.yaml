@@ -1,0 +1,24 @@
+default:
+  icon: 
+    path: map/locations/icons/default.svg
+    width:  30
+    height: 30
+    offset:
+      x: -15
+      y: -30
+    style: ''
+  label:
+    width: 80 # px
+    style: 'color: black;'
+unknown:
+  icon:
+    path: map/locations/icons/unknown.svg
+    width:  20
+    height: 20
+    offset:
+      x: -10
+      y: -20
+    style: ''
+  label:
+    width: 80 # px
+    style: "color: red;"

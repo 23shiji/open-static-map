@@ -8,43 +8,49 @@ export function load_config_files({commit, state}){
   .get(runtime_config_path.layers_index)
   .then(res => YAML.safeLoad(res.data) )
   
-  let loc_prom = axios
-    .get(runtime_config_path.locations_index)
+  let loc_index = axios
+    .get(runtime_config_path.locations.index)
     .then(res => YAML.safeLoad(res.data) )
-    .then(({locations, templates}) => {
-      for(let loc of locations){
-        let temps = []
-        if(!loc.template){
-          continue
-        }else if(typeof loc.template === "string"){
-          temps.push(loc.template)
-        }else{
-          temps = temps.concat(loc.template)
-        }
-        for(let template of temps){
-          let tags = loc.tags || []
-          let temp = templates[template]
-          let update = {}
-          Object.assign(update, loc)
-          Object.assign(update, temp)
-          update.tags = temp.tags ? tags.concat(temp.tags) : tags
-          Object.assign(loc, update)
-        }
-      }
-      return locations
-    })
-  let ico_prom = axios
-    .get(runtime_config_path.icons_index)
+
+  let loc_template = axios
+    .get(runtime_config_path.locations.templates)
+    .then(res => YAML.safeLoad(res.data) )
+
+  let loc_pin = axios
+    .get(runtime_config_path.locations.pins)
     .then(res => YAML.safeLoad(res.data) )
     
-  Promise.all([map_prom, loc_prom, ico_prom]).then(([{map, layers}, locations, icons]) => {
+  Promise.all([map_prom, loc_index, loc_template, loc_pin]).then(([{map, layers}, locations, templates, pins]) => {
     for(let loc of locations){
-      loc.icon = icons[loc.icon]
+      let temps = []
+      if(!loc.template){
+        continue
+      }else if(typeof loc.template === "string"){
+        temps.push(loc.template)
+      }else{
+        temps = temps.concat(loc.template)
+      }
+      for(let template of temps){
+        let tags = loc.tags || []
+        let temp = templates[template]
+        let update = {}
+        if(!temp){
+          throw new TypeError(`Unknown template: ${template} (loc: ${loc.name})`)
+        }
+        Object.assign(update, loc)
+        Object.assign(update, temp)
+        update.tags = temp.tags ? tags.concat(temp.tags) : tags
+        Object.assign(loc, update)
+      }
+      let pin_name = loc.pin
+      loc.pin = pins[pin_name]
+      if(!loc.pin){
+        throw new TypeError(`Unknown pin: ${pin_name} (loc: ${loc.name})`)
+      }
     }
     commit('set_map_info', map)
     commit('set_layers', layers)
     commit('set_locations', locations)
-    commit('set_icons', icons)
     commit('data_loaded')
   })
 }

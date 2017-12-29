@@ -1,3 +1,5 @@
 layers_index: map/layers/index.yaml
-locations_index: map/locations/index.yaml
-icons_index: map/icons/index.yaml
+locations:
+  index:      map/locations/index.yaml
+  pins:       map/locations/pins.yaml
+  templates:  map/locations/templates.yaml

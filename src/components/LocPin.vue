@@ -1,8 +1,9 @@
 <template lang="jade">
 div.loc_pin(ref="pinDom", :style="pin_style")
   img.loc_icon(
-    :width="loc.icon.width", 
-    :height="loc.icon.height", 
+    v-if="loc.pin.icon",
+    :width="loc.pin.icon.width", 
+    :height="loc.pin.icon.height", 
     :style="icon_style", 
     :src="img_path",
     @click="show",
@@ -42,26 +43,28 @@ export default {
       // return [500, 500]
     },
     img_path(){
-      return this.loc.icon.path
+      return this.loc.pin.icon.path
     },
     icon_style(){
       let [px, py] = this.pin_screen_pos
-      let x = Math.floor(px + this.loc.icon.offset.x)
-      let y = Math.floor(py + this.loc.icon.offset.y)
-      return `left: ${x}px; top: ${y}px; ` + (this.loc.icon.icon_style || '')
+      let {icon} = this.loc.pin
+      let x = Math.floor(px + icon.offset.x)
+      let y = Math.floor(py + icon.offset.y)
+      return `left: ${x}px; top: ${y}px; ${icon.style ? icon.style : ''};`
     },
     name_style(){
       let [px, py] = this.pin_screen_pos
-      let cw = this.loc.icon.style.name_width
+      let {label} = this.loc.pin
+      let cw = label.width
       let x = Math.floor(px - cw / 2)
       let y = Math.floor(py)
-      return `left: ${x}px; top: ${y}px; width: ${cw}px;` + (this.loc.icon.style.name_style || '')
+      return `left: ${x}px; top: ${y}px; width: ${cw}px; ${label.style ? label.style : ''};`
     },
     pin_style(){
       let [px, py] = this.pin_screen_pos
       let x = Math.floor(px)
       let y = Math.floor(py)
-      let w = Math.floor(this.loc.icon.style.name_width)
+      let w = Math.floor(this.loc.pin.label.width)
       return `left: ${x}px; top: ${y}px; width: ${w}px;`
     },
     display_label(){

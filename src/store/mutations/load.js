@@ -20,10 +20,6 @@ export function set_locations(state, locations){
   state.locations = locations
 }
 
-export function set_icons(state, icons){
-  state.icons = icons
-}
-
 export function set_current_location(state, loc){
   state.current_location = loc
 }

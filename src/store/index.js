@@ -21,7 +21,6 @@ export default new Vuex.Store({
     zoom: 1,
     zoom_limit: 0,
     map_info: null,
-    icons: null,
     search_query: null
   },
   getters: {
