@@ -9,6 +9,7 @@ div.loc_pin(ref="pinDom", :style="pin_style")
     @touchend="show"
     )
   div.loc_name(
+    v-if="display_label",
     :style="name_style", 
     @click="show",
     @touchend="show"
@@ -62,6 +63,12 @@ export default {
       let y = Math.floor(py)
       let w = Math.floor(this.loc.icon.style.name_width)
       return `left: ${x}px; top: ${y}px; width: ${w}px;`
+    },
+    display_label(){
+      let loc = this.loc
+      let zoom = this.zoom
+      return ((!loc.zoom || 
+        ( (!loc.zoom.gte || loc.zoom.gte <= zoom) && (!loc.zoom.lte || zoom <= loc.zoom.lte))))
     }
   },
   methods: {
