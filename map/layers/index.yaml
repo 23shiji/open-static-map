@@ -18,9 +18,6 @@ map:
 layers:
   - id: default
     name: 默认图层
-    zoom:
-      gte: 0.0001
-      lte: 10000
     images:
     - path: map/layers/layer_default/map.min.svg
       width:  6243

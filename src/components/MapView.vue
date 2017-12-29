@@ -18,11 +18,18 @@ div#map-view(
             v-if="image_visiable(img_info)",
             :image_info  = "img_info"
           )
-    template(v-for="loc in ($store.state.query_locations && $store.state.query_locations.length ? $store.state.query_locations : $store.state.locations)")
-      template(v-if="display_loc(loc)")
-        loc-pin(
-          :loc  = "loc"
-        )
+    template(v-if="$store.state.query_locations && $store.state.query_locations.length")
+      template(v-for="loc in $store.state.query_locations")
+        template(v-if="display_loc(loc, true)")
+          loc-pin(
+            :loc  = "loc"
+          )
+    template(v-else)
+      template(v-for="loc in $store.state.locations")
+        template(v-if="display_loc(loc, false)")
+          loc-pin(
+            :loc  = "loc"
+          )
   img#cross(src="dist/cross.svg")
 </template>
 <script>
@@ -60,15 +67,15 @@ export default {
         center
       })
     },
-    display_loc(loc){
+    display_loc(loc, qloc){
       let {zoom} = this.$store.state
-      return ((!loc.zoom || 
-        (loc.zoom.gte <= zoom && zoom <= loc.zoom.lte)) &&
+      return ((!loc.zoom || qloc ||
+        ( (!loc.zoom.gte || loc.zoom.gte <= zoom) && (!loc.zoom.lte || zoom <= loc.zoom.lte))) &&
         this.location_visiable(loc))
     },
     display_layer(layer){
       let {zoom} = this.$store.state
-      return !layer.zoom || (layer.zoom.gte <= zoom && zoom <= layer.zoom.lte)
+      return !layer.zoom || ((!layer.zoom.gte || layer.zoom.gte <= zoom) && (!layer.zoom.lte || zoom <= layer.zoom.lte))
     }
   },
   created(){

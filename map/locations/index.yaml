@@ -4,14 +4,12 @@ templates:
     tags: [标准模板]
     zoom: # 可选
       gte: 0.0000001
-      lte: 100
   unknown:
     icon: unknown_icon # 表签名 标签信息见 map/icons/index.yaml
     tags: [未登记地点]
     desc: map/locations/descriptions/unknown.md
     zoom: # 可选
       gte: 5
-      lte: 100
 locations:
 - id: null_island
   desc: map/locations/descriptions/null_island.md # 描述文件地址 Markdown
