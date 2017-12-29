@@ -93,7 +93,7 @@ layers: # 图层
 
 ```yaml
 default: # 第一个地标样式 名为default
-  icon: # 图标信息
+  icon: # 图标信息 可选
     path: map/locations/icons/default.svg
     width:  30 # 宽度
     height: 30 # 高度
@@ -101,7 +101,7 @@ default: # 第一个地标样式 名为default
       x: -15 # 建议值: -width/2
       y: -30 # 建议值: -height
     style: '' # 应用于图标的样式 CSS
-  label: # 文字标签信息
+  label: # 文字标签信息 可选
     width: 80              # 文字标签宽度 单位px
     style: 'color: black;' # 文字标签样式 CSS
 unknown: # 第二个地标样式 名为unknown 以下略
