@@ -12,12 +12,12 @@ default:
     style: 'color: black;'
 unknown:
   icon:
-    path: map/locations/icons/unknown.svg
-    width:  20
-    height: 20
+    path: map/locations/icons/test.svg
+    width:  30
+    height: 30
     offset:
-      x: -10
-      y: -20
+      x: -15
+      y: -30
     style: ''
   label:
     width: 80 # px
