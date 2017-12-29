@@ -104,7 +104,10 @@ default: # 第一个地标样式 名为default
   label: # 文字标签信息 可选
     width: 80              # 文字标签宽度 单位px
     style: 'color: black;' # 文字标签样式 CSS
-unknown: # 第二个地标样式 名为unknown 以下略
+unknown: # 第二个地标样式 名为unknown
+  label: # 文字标签信息 可选
+    width: 80              # 文字标签宽度 单位px
+    style: 'color: black;' # 文字标签样式 CSS
 ```
 ## 模板
 

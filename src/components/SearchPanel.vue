@@ -16,7 +16,9 @@ div
             template(v-if="$store.state.query_locations.length")
               template(v-for="loc in $store.state.query_locations")
                 .collection-item.avatar(@click="view(loc)")
-                  img.circle.loc-icon-collection(:src="loc.icon.path")
+                  template(v-if="loc.pin.icon")
+                    img.circle.loc-icon-collection(:src="loc.pin.icon.path")
+                  i.material-icons.circle(v-else) location_off
                   span.title {{loc.name}}
                   p {{loc.tags.join(", ")}}
             .collection-item(v-else)
