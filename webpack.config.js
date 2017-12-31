@@ -5,7 +5,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports = {
   entry: {
     main: './src/main.js',
-    vendor: './src/vendor.js',
+    vendor_jq: './src/vendors/vendor-jq.js',
+    vendor_md: './src/vendors/vendor-md.js',
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -14,12 +15,13 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin("[name].css"),
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jquery: "jquery",
-      "window.jQuery": "jquery",
-      jQuery:"jquery"
-    })
+    // new webpack.ProvidePlugin({
+    //   '$': "jquery",
+    //   'window.$': "jquery",
+    //   'jquery': "jquery",
+    //   "window.jQuery": "jquery",
+    //   'jQuery': "jquery"
+    // })
   ],
   module: {
     rules: [

@@ -34,6 +34,10 @@ div
 </template>
 <script>
 export default {
+  mounted(){
+    alert(window.jQuery('.drawer-btn').sideNav)
+    window.$('.drawer-btn').sideNav()
+  }
 }
 </script>
 <style>
