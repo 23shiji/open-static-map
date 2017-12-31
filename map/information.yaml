@@ -58,20 +58,20 @@ custom_elements:
       opacity: 1.0;
     }
   '
-- html: '
-  <a id="feedBackBtn" target="_blank" href="http://yipolis-republic.mikecrm.com/JId8NRh">
-    <!--
-    <i class="material-icons black-text">feedback</i>
-    -->
-    <span class="black-text large">提交<br/>反馈</span>
-  </a>'
-  css: '
-    a#feedBackBtn{
-      position: fixed;
-      bottom: 6rem;
-      line-height: 1.7rem;
-      font-size: 1.7rem;
-      left: 1.45rem;
-      z-index: 90;
-    }
-  '
+# - html: '
+#   <a id="feedBackBtn" target="_blank" href="http://yipolis-republic.mikecrm.com/JId8NRh">
+#     <!--
+#     <i class="material-icons black-text">feedback</i>
+#     -->
+#     <span class="black-text large">提交<br/>反馈</span>
+#   </a>'
+#   css: '
+#     a#feedBackBtn{
+#       position: fixed;
+#       bottom: 6rem;
+#       line-height: 1.7rem;
+#       font-size: 1.7rem;
+#       left: 1.45rem;
+#       z-index: 90;
+#     }
+#   '
