@@ -25,7 +25,6 @@ export default {
       let c = document.createElement('style')
       c.textContent = ce.css
       c.id=`custom_ele_style_${this.css_num++}`
-      console.log(c)
       document.head.appendChild(c)
     }
   }

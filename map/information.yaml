@@ -60,7 +60,10 @@ custom_elements:
   '
 - html: '
   <a id="feedBackBtn" class="white btn-floating btn-large waves-effect waves-light" target="_blank" href="http://yipolis-republic.mikecrm.com/JId8NRh">
+    <!--
     <i class="material-icons black-text">feedback</i>
+    -->
+    <span class="black-text">反馈</span>
   </a>'
   css: '
     a#feedBackBtn{
