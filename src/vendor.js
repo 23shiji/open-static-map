@@ -11,7 +11,7 @@ import $ from 'jquery'
 import 'materialize-css/dist/js/materialize.js'
 import 'materialize-css/sass/materialize.scss'
 import 'webpack-material-design-icons'
-
+alert(233);
 $(document).ready(function() {
   $('select').material_select();
   $('.drawer-btn').sideNav({
@@ -19,4 +19,5 @@ $(document).ready(function() {
     closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
     draggable:    true, // Choose whether you can drag to open on touch screens,
   })
+  alert("FUCK")
 });
