@@ -48,3 +48,7 @@ export function set_display_search_panel(state, b){
 export function set_display_layer_panel(state, b){
   state.display_layer_panel=b
 }
+
+export function set_display_pins(state, b){
+  state.display_pins=b
+}

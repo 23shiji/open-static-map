@@ -5,11 +5,15 @@ div
       span.title Layers
       span#hide-btn(@click="$store.dispatch('hide_layer_panel')")
         i.material-icons.small call_made
+    .collection-item(@click="$store.commit('set_display_pins', !$store.state.display_pins)")
+        span.title
+          input#displayPinCheckbox(type="checkbox", v-model="$store.state.display_pins")
+          label(for="displayPinCheckbox`") Pins
     template(v-for="(layer, index) in $store.state.layers")
       .collection-item(@click="layer.display = !layer.display")
         span.title
           input(type="checkbox", :id="`layer_item_${index}`", v-model="layer.display")
-          label(for="`layer_item_${index}`") {{layer.name}}
+          label(:for="`layer_item_${index}`") {{layer.name}}
   a.btn-floating.btn-large.waves-effect.waves-light.white#layer-btn(v-else, @click="$store.dispatch('show_layer_panel')")
     i.material-icons.black-text layers
 </template>

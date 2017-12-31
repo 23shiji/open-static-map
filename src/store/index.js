@@ -25,7 +25,8 @@ export default new Vuex.Store({
     search_query: null,
     information: null,
     display_search_panel: false,
-    display_layer_panel: false
+    display_layer_panel: false,
+    display_pins: true
   },
   getters: {
     displayed_map_width(state){

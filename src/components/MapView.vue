@@ -18,18 +18,19 @@ div#map-view(
             v-if="image_visiable(img_info)",
             :image_info  = "img_info"
           )
-    template(v-if="$store.state.query_locations && $store.state.query_locations.length")
-      template(v-for="loc in $store.state.query_locations")
-        template(v-if="display_loc(loc, true)")
-          loc-pin(
-            :loc  = "loc"
-          )
-    template(v-else)
-      template(v-for="loc in $store.state.locations")
-        template(v-if="display_loc(loc, false)")
-          loc-pin(
-            :loc  = "loc"
-          )
+    template(v-if="$store.state.display_pins")
+      template(v-if="$store.state.query_locations && $store.state.query_locations.length")
+        template(v-for="loc in $store.state.query_locations")
+          template(v-if="display_loc(loc, true)")
+            loc-pin(
+              :loc  = "loc"
+            )
+      template(v-else)
+        template(v-for="loc in $store.state.locations")
+          template(v-if="display_loc(loc, false)")
+            loc-pin(
+              :loc  = "loc"
+            )
   img#cross(src="dist/cross.svg")
 </template>
 <script>
