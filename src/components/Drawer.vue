@@ -38,7 +38,7 @@ export default {
 </script>
 <style>
 #drawer-btn{
-  z-index: 105;
+  z-index: 102;
   position: fixed;
   left:  1rem;
   top:    1rem;
