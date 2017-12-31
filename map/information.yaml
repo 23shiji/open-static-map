@@ -1,12 +1,3 @@
-logo: #可选
-  src: logo.svg
-  url: 
-  size:
-    width: 3rem
-    height: 4rem
-  opacity:
-    out:     0.3
-    focused: 1.0
 copyright: © 2018-2218 Yipolis Online 1.0 BETA
 custom_elements:
   - html: '
