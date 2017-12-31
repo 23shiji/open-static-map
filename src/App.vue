@@ -3,14 +3,7 @@
   #map-container
     template(v-show="$store.state.data_loaded")
       map-view
-      template(v-if="$store.state.information && $store.state.information.logo")
-        a#logo-container(
-          @mouseover="logo_focused = true",
-          @mouseout="logo_focused = false",
-          :href="$store.state.information.logo.url",
-          target="_blank"
-        )
-          img(:src="$store.state.information.logo.src", :style="logo_style")
+      custom-elements(v-if="$store.state.information && $store.state.information.custom_elements")
       status-panel
       search-panel
       controller
@@ -28,6 +21,7 @@ import LocDesc from './components/LocDesc'
 import SearchPanel from './components/SearchPanel'
 import StatusPanel from './components/StatusPanel'
 import Drawer from './components/Drawer'
+import CustomElements from './components/CustomElements'
 
 export default {
   name: 'app',
@@ -42,7 +36,8 @@ export default {
     LocDesc,
     SearchPanel,
     StatusPanel,
-    Drawer
+    Drawer,
+    CustomElements
   },
   computed: {
     logo_style(){
@@ -87,10 +82,5 @@ export default {
 nav{
   z-index: 1000;
   position: fixed;
-}
-#logo-container{
-  position: fixed;
-  bottom: 1rem;
-  left: 1rem;
 }
 </style>
