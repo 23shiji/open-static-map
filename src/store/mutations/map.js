@@ -44,3 +44,7 @@ export function set_search_text(state, t){
 export function set_display_search_panel(state, b){
   state.display_search_panel=b
 }
+
+export function set_display_layer_panel(state, b){
+  state.display_layer_panel=b
+}

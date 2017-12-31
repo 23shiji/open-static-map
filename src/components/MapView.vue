@@ -75,7 +75,7 @@ export default {
     },
     display_layer(layer){
       let {zoom} = this.$store.state
-      return !layer.zoom || ((!layer.zoom.gte || layer.zoom.gte <= zoom) && (!layer.zoom.lte || zoom <= layer.zoom.lte))
+      return layer.display && (!layer.zoom || ((!layer.zoom.gte || layer.zoom.gte <= zoom) && (!layer.zoom.lte || zoom <= layer.zoom.lte)))
     }
   },
   created(){

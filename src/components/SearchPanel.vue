@@ -60,13 +60,16 @@ export default {
   position: fixed;
   right:  1rem;
   top:    1rem;
-  z-index: 100;
+}
+#search-btn {
+  z-index: 105;
 }
 #search_panel{
   padding-top: 1rem;
   width: 24rem;
   max-width: calc(100vw - 2rem);
   max-height: calc(100vh - 2rem);
+  z-index: 106;
 }
 .loc-icon-collection{
   width: 2rem;

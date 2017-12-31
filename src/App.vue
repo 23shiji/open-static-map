@@ -6,6 +6,7 @@
       custom-elements(v-if="$store.state.information && $store.state.information.custom_elements")
       status-panel
       search-panel
+      layer-panel(v-if="$store.state.layers")
       controller
       drawer(v-if="$store.state.information && $store.state.information.menu")
       loc-desc(v-if="$store.state.current_location")
@@ -19,6 +20,7 @@ import MapView from './components/MapView'
 import Controller from './components/Controller'
 import LocDesc from './components/LocDesc'
 import SearchPanel from './components/SearchPanel'
+import LayerPanel from './components/LayerPanel'
 import StatusPanel from './components/StatusPanel'
 import Drawer from './components/Drawer'
 import CustomElements from './components/CustomElements'
@@ -37,7 +39,8 @@ export default {
     SearchPanel,
     StatusPanel,
     Drawer,
-    CustomElements
+    CustomElements,
+    LayerPanel
   },
   computed: {
     logo_style(){

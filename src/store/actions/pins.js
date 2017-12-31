@@ -63,6 +63,14 @@ export function hide_search_panel({commit}){
   commit('set_display_search_panel', false)
 }
 
+export function show_layer_panel({commit}){
+  commit('set_display_layer_panel', true)
+}
+
+export function hide_layer_panel({commit}){
+  commit('set_display_layer_panel', false)
+}
+
 export function default_view_point({commit, state}){
   let {x, y} = state.map_info.center
   commit('move_to', [x, y])

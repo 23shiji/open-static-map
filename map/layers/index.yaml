@@ -13,10 +13,19 @@ map:
       to:    180
   view_zoom: 1.0
 layers:
-  - id: default
-    name: 默认图层
+  - name: 默认地图
+    display: true
     images:
     - path: map/layers/layer_default/map.min.svg
+      width:  6243
+      height: 3121
+      offset:
+        x: 0
+        y: 0
+  - name: 地形图
+    display: false
+    images:
+    - path: map/layers/layer_default/terrian.min.svg
       width:  6243
       height: 3121
       offset:
