@@ -11,7 +11,7 @@ import $ from 'jquery'
 import 'materialize-css/dist/js/materialize.js'
 import 'materialize-css/sass/materialize.scss'
 import 'webpack-material-design-icons'
-alert('233')
+alert(233);
 $(document).ready(function() {
   $('select').material_select();
   $('.drawer-btn').sideNav({
