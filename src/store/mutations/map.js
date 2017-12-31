@@ -40,3 +40,7 @@ export function zoom_to(state, {zoom: tz, center = null}){
 export function set_search_text(state, t){
   state.search_text=t
 }
+
+export function set_display_search_panel(state, b){
+  state.display_search_panel=b
+}

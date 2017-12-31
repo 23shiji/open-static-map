@@ -41,12 +41,33 @@ export function search({commit, state}, s){
   commit('set_query_locations', locs)
 }
 
-export function visiable_search({commit, dispatch}, s){
-  commit('set_search_text', s)
-  dispatch('search', s)
+export function visiable_search({commit, dispatch}, s = null){
+  if(s){
+    commit('set_search_text', s)
+    dispatch('search', s)
+  }else{
+    commit('set_search_text', '')
+  }
 }
 
 export function visiable_search_reset({commit, dispatch}){
   commit('set_search_text', '')
   dispatch('search', '')
+}
+
+export function show_search_panel({commit}){
+  commit('set_display_search_panel', true)
+}
+
+export function hide_search_panel({commit}){
+  commit('set_display_search_panel', false)
+}
+
+export function default_view_point({commit, state}){
+  let {x, y} = state.map_info.center
+  commit('move_to', [x, y])
+  commit('zoom_to', {
+    zoom: state.init_zoom,
+    center: [x, y]
+  })
 }

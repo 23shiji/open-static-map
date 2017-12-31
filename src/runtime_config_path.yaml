@@ -1,4 +1,5 @@
 layers_index: map/layers/index.yaml
+information:  map/information.yaml
 locations:
   index:      map/locations/index.yaml
   pins:       map/locations/pins.yaml

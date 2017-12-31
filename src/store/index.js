@@ -16,12 +16,15 @@ export default new Vuex.Store({
     layers: [],
     map_width: 0,
     map_height: 0,
+    init_zoom: 0,
     x: 0,
     y: 0,
     zoom: 1,
     zoom_limit: 0,
     map_info: null,
-    search_query: null
+    search_query: null,
+    information: null,
+    display_search_panel: false
   },
   getters: {
     displayed_map_width(state){

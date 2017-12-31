@@ -12,9 +12,6 @@ map:
       from: -180
       to:    180
   view_zoom: 1.0
-  logo: #可选
-    src: logo.svg
-    url: http://wiki.23shiji.net/wiki/index.php/%E9%A9%BF%E5%AE%81%E5%85%B1%E5%92%8C%E5%9B%BD
 layers:
   - id: default
     name: 默认图层

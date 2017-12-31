@@ -1,6 +1,6 @@
 <template lang="jade">
 div
-  div#search_panel.z-depth-3.white(v-if="show")
+  div#search_panel.z-depth-3.white(v-if="$store.state.display_search_panel")
     .container
       .row
         .input-field.col.s12.m12.l12
@@ -26,20 +26,15 @@ div
         .row
           button.btn.col.s3.m3.l3(@click="$store.dispatch('visiable_search_reset')")
             | CLEAR
-    span#hide-btn(@click="show = false")
+    span#hide-btn(@click="$store.dispatch('hide_search_panel')")
       i.material-icons.small call_made
-  a.btn-floating.btn-large.waves-effect.waves-light#search-btn(v-else, @click="show=true", :class="{'red': $store.state.search_text, 'white': !$store.state.search_text}")
+  a.btn-floating.btn-large.waves-effect.waves-light#search-btn(v-else, @click="$store.dispatch('show_search_panel')", :class="{'red': $store.state.search_text, 'white': !$store.state.search_text}")
     i.material-icons(:class="{'white-text': $store.state.search_text, 'black-text': !$store.state.search_text}") search
 </template>
 <script>
 import {MapPos} from '../helpers/map_pos'
 import {move_animation} from '../helpers/animation'
 export default {
-  data(){
-    return {
-      show: false
-    }
-  },
   methods: {
     search(s){
       this.$store.dispatch('search', s)

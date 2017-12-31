@@ -1,8 +1,9 @@
 <template lang="jade">
 div.container#status-lanel
   div#status-view
-    p {{position_text}}
-    p {{$store.state.zoom.toFixed(5)}} X
+    span(v-if="$store.state.information && $store.state.information.copyright") {{$store.state.information.copyright+" | "}}
+    span {{position_text+" "}}
+    span {{$store.state.zoom.toFixed(5)}} X
 </template>
 <script>
 import {MapPos} from '../helpers/map_pos'
@@ -52,8 +53,9 @@ export default {
 }
 #status-view{
   position: fixed;
-  left: 1rem;
-  bottom: 1rem;
+  left: 0;
+  bottom: 0;
+  font-size: 0.75rem;
 }
 #status-view>p{
   margin: 0;

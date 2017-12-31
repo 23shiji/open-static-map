@@ -5,8 +5,9 @@ export function data_loaded(state) {
 export function set_map_info(state, map){
   state.map_width = map.width
   state.map_height = map.height
-  state.zoom = window.innerHeight / map.height * 1.1
-  state.zoom_limit = state.zoom / 2
+  state.init_zoom = window.innerHeight / map.height * 1.1
+  state.zoom = state.init_zoom
+  state.zoom_limit = state.init_zoom / 2
   state.x = map.center.x
   state.y = map.center.y
   state.map_info = map
@@ -39,4 +40,8 @@ export function set_query_locations(state, ql){
 
 export function reset_query_locations(state){
   state.query_locations = null
+}
+
+export function set_information(state, info){
+  state.information = info
 }

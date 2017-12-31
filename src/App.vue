@@ -3,15 +3,18 @@
   #map-container
     template(v-show="$store.state.data_loaded")
       map-view
-      template(v-if="$store.state.map_info && $store.state.map_info.logo")
+      template(v-if="$store.state.information && $store.state.information.logo")
         a#logo-container(
-          :href="$store.state.map_info.logo.url",
-          target="_blank"  
+          @mouseover="logo_focused = true",
+          @mouseout="logo_focused = false",
+          :href="$store.state.information.logo.url",
+          target="_blank"
         )
-          img(:src="$store.state.map_info.logo.src")
+          img(:src="$store.state.information.logo.src", :style="logo_style")
       status-panel
       search-panel
       controller
+      drawer(v-if="$store.state.information && $store.state.information.menu")
       loc-desc(v-if="$store.state.current_location")
     template(v-if="!$store.state.data_loaded")
       h1 Loading
@@ -24,17 +27,31 @@ import Controller from './components/Controller'
 import LocDesc from './components/LocDesc'
 import SearchPanel from './components/SearchPanel'
 import StatusPanel from './components/StatusPanel'
+import Drawer from './components/Drawer'
 
 export default {
   name: 'app',
+  data(){
+    return {
+      logo_focused: false
+    }
+  },
   components: {
     MapView,
     Controller,
     LocDesc,
     SearchPanel,
-    StatusPanel
+    StatusPanel,
+    Drawer
   },
   computed: {
+    logo_style(){
+      let {out, focused} = this.$store.state.information.logo.opacity
+      let {width, height} = this.$store.state.information.logo.size
+      let opacity = this.logo_focused ? focused : out
+      return `opacity: ${opacity}; width: ${width}; height: ${height}`
+      
+    },
     title: {
       get(){
         return document.title
@@ -43,11 +60,6 @@ export default {
         document.title = t
         this.map_name  = t
       }
-    }
-  },
-  data(){
-    return {
-      data_loaded: false
     }
   },
   methods: {
@@ -78,14 +90,7 @@ nav{
 }
 #logo-container{
   position: fixed;
-  top: 1rem;
+  bottom: 1rem;
   left: 1rem;
-}
-
-a#logo-container, a#logo-container:link, a#logo-container:visited {
-  opacity: 0.25;
-}
-a#logo-container:hover, a#logo-container:active {
-  opacity: 0.5;
 }
 </style>
