@@ -35,7 +35,10 @@ div
 <script>
 export default {
   mounted(){
-    window.$('.drawer-btn').sideNav()
+    window.$('.drawer-btn').sideNav({
+      closeOnClick: true,
+      draggable: true
+    })
   }
 }
 </script>
