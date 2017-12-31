@@ -44,7 +44,7 @@ custom_elements:
     }
     a#logoLink{
       position: fixed;
-      left: 5rem;
+      left: 1rem;
       bottom: 1rem;
     }
     img#logoLinkIcon{
@@ -59,17 +59,19 @@ custom_elements:
     }
   '
 - html: '
-  <a id="feedBackBtn" class="white btn-floating btn-large waves-effect waves-light" target="_blank" href="http://yipolis-republic.mikecrm.com/JId8NRh">
+  <a id="feedBackBtn" target="_blank" href="http://yipolis-republic.mikecrm.com/JId8NRh">
     <!--
     <i class="material-icons black-text">feedback</i>
     -->
-    <span class="black-text">反馈</span>
+    <span class="black-text large">提交<br/>反馈</span>
   </a>'
   css: '
     a#feedBackBtn{
       position: fixed;
-      bottom: 2rem;
-      left: 1rem;
+      bottom: 6rem;
+      line-height: 1.7rem;
+      font-size: 1.7rem;
+      left: 1.45rem;
       z-index: 90;
     }
   '
