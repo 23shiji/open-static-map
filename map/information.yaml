@@ -1,43 +1,4 @@
 copyright: © 2018-2218 Yipolis Online 1.0 BETA
-custom_elements:
-  - html: '
-    <a id="logoLink" target="_blank" href="http://wiki.23shiji.net/wiki/index.php/%E9%A9%BF%E5%AE%81%E5%85%B1%E5%92%8C%E5%9B%BD">
-      <img id="logoLinkIcon" src="logo.svg"></img>
-    </a>'
-    css: '
-      a#logoLink{
-        opacity: 0.3;
-        z-index: 80;
-      }
-      a#logoLink{
-        position: fixed;
-        left: 5rem;
-        bottom: 1rem;
-      }
-      img#logoLinkIcon{
-        width: 4rem;
-        height: 5rem;
-      }
-      a#logoLink:link, a#logoLink:visited{
-        opacity: 0.3;
-      }
-      a#logoLink:hover, a#logoLink:active{
-        opacity: 1.0;
-      }
-    '
-  - html: '
-    <a id="feedBackBtn" class="white btn-floating btn-large waves-effect waves-light" target="_blank" href="http://yipolis-republic.mikecrm.com/JId8NRh">
-      <i class="material-icons black-text">feedback</i>
-    </a>'
-    css: '
-      a#feedBackBtn{
-        position: fixed;
-        bottom: 2rem;
-        left: 1rem;
-        z-index: 90;
-      }
-    '
-
 menu:
   - type:   user
     name:   驿宁
@@ -70,3 +31,42 @@ menu:
   - type:   link
     text:  提交反馈
     url:    http://yipolis-republic.mikecrm.com/JId8NRh
+
+custom_elements:
+- html: '
+  <a id="logoLink" target="_blank" href="http://wiki.23shiji.net/wiki/index.php/%E9%A9%BF%E5%AE%81%E5%85%B1%E5%92%8C%E5%9B%BD">
+    <img id="logoLinkIcon" src="logo.svg"></img>
+  </a>'
+  css: '
+    a#logoLink{
+      opacity: 0.3;
+      z-index: 80;
+    }
+    a#logoLink{
+      position: fixed;
+      left: 5rem;
+      bottom: 1rem;
+    }
+    img#logoLinkIcon{
+      width: 4rem;
+      height: 5rem;
+    }
+    a#logoLink:link, a#logoLink:visited{
+      opacity: 0.3;
+    }
+    a#logoLink:hover, a#logoLink:active{
+      opacity: 1.0;
+    }
+  '
+- html: '
+  <a id="feedBackBtn" class="white btn-floating btn-large waves-effect waves-light" target="_blank" href="http://yipolis-republic.mikecrm.com/JId8NRh">
+    <i class="material-icons black-text">feedback</i>
+  </a>'
+  css: '
+    a#feedBackBtn{
+      position: fixed;
+      bottom: 2rem;
+      left: 1rem;
+      z-index: 90;
+    }
+  '
