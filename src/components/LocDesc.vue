@@ -23,6 +23,7 @@ export default {
       this.$store.commit('reset_current_location')
     },
     view_tag(t){
+      this.$store.dispatch('show_search_panel')
       this.$store.dispatch('visiable_search', `tag:^${t}$`)
       this.close()
     }

@@ -1,6 +1,6 @@
 <template lang="jade">
 div.container#status-lanel
-  div#status-view
+  div.black-text#status-view
     span(v-if="$store.state.information && $store.state.information.copyright") {{$store.state.information.copyright+" | "}}
     span {{position_text+" "}}
     span {{$store.state.zoom.toFixed(5)}} X
