@@ -46,7 +46,7 @@ groups:
           y: 0
     - name: 装饰性绿地
       zoom:
-        gte: 8
+        gte: 6
       images:
       - path: map/layers/layer_default/min/house_green.svg
         width:  6243
@@ -64,7 +64,7 @@ groups:
           y: 0
     - name: 装饰植物
       zoom:
-        gte: 15
+        gte: 10
       images:
       - path: map/layers/layer_default/min/bush.svg
         width:  6243
@@ -99,7 +99,7 @@ groups:
     - name: 民居
       display: true
       zoom:
-        gte: 8
+        gte: 6
       images:
       - path: map/layers/layer_default/min/house.svg
         width:  6243
