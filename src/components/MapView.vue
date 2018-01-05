@@ -11,13 +11,15 @@ div#map-view(
   @touchend.stop="on_touch_end"
 )
   #img-container
-    template(v-for="layer in $store.state.layers")
-      template(v-if="display_layer(layer)")
-        template(v-for="img_info in layer.images")
-          map-image(
-            v-if="image_visiable(img_info)",
-            :image_info  = "img_info"
-          )
+    template(v-for="group in $store.state.groups")
+      template(v-if="group.display")
+        template(v-for="layer in group.layers")
+          template(v-if="display_layer(layer)")
+            template(v-for="img_info in layer.images")
+              map-image(
+                v-if="image_visiable(img_info)",
+                :image_info  = "img_info"
+              )
     template(v-if="$store.state.display_pins")
       template(v-if="$store.state.query_locations && $store.state.query_locations.length")
         template(v-for="loc in $store.state.query_locations")
@@ -76,7 +78,7 @@ export default {
     },
     display_layer(layer){
       let {zoom} = this.$store.state
-      return layer.display && (!layer.zoom || ((!layer.zoom.gte || layer.zoom.gte <= zoom) && (!layer.zoom.lte || zoom <= layer.zoom.lte)))
+      return (!layer.zoom || ((!layer.zoom.gte || layer.zoom.gte <= zoom) && (!layer.zoom.lte || zoom <= layer.zoom.lte)))
     }
   },
   created(){

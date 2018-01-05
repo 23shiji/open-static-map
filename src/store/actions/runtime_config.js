@@ -29,7 +29,7 @@ export function load_config_files({commit, state}){
     loc_template, 
     loc_pin,
     info]).then(([
-      {map, layers}, 
+      {map, groups}, 
       locations, 
       templates, 
       pins,
@@ -62,7 +62,7 @@ export function load_config_files({commit, state}){
       }
     }
     commit('set_map_info', map)
-    commit('set_layers', layers)
+    commit('set_groups', groups)
     commit('set_locations', locations)
     commit('set_information', information)
     commit('data_loaded')

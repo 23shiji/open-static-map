@@ -12,91 +12,98 @@ map:
       from: -180
       to:    180
   view_zoom: 1.0
-layers:
+groups:
   - name: 行政图
     display: true
-    images:
-    - path: map/layers/layer_default/min/base.svg
-      width:  6243
-      height: 3121
-      offset:
-        x: 0
-        y: 0
-  - name: 绿地
-    display: true
-    images:
-    - path: map/layers/layer_default/min/green.svg
-      width:  6243
-      height: 3121
-      offset:
-        x: 0
-        y: 0
-  - name: 装饰性绿地
-    display: true
-    zoom:
-      gte: 8
-    images:
-    - path: map/layers/layer_default/min/house_green.svg
-      width:  6243
-      height: 3121
-      offset:
-        x: 0
-        y: 0
+    layers:
+    - images:
+      - path: map/layers/layer_default/min/base.svg
+        width:  6243
+        height: 3121
+        offset:
+          x: 0
+          y: 0
   - name: 地形图
     display: false
-    images:
-    - path: map/layers/layer_default/min/terrian.svg
-      width:  6243
-      height: 3121
-      offset:
-        x: 0
-        y: 0
+    layers:
+    - images:
+      - path: map/layers/layer_default/min/terrian.svg
+        width:  6243
+        height: 3121
+        offset:
+          x: 0
+          y: 0
+  - name: 绿地
+    display: true
+    layers:
+    - name: 绿地
+      images:
+      - path: map/layers/layer_default/min/green.svg
+        width:  6243
+        height: 3121
+        offset:
+          x: 0
+          y: 0
+    - name: 装饰性绿地
+      zoom:
+        gte: 8
+      images:
+      - path: map/layers/layer_default/min/house_green.svg
+        width:  6243
+        height: 3121
+        offset:
+          x: 0
+          y: 0
+    - name: 树林
+      images:
+      - path: map/layers/layer_default/min/forest.svg
+        width:  6243
+        height: 3121
+        offset:
+          x: 0
+          y: 0
+    - name: 装饰植物
+      zoom:
+        gte: 15
+      images:
+      - path: map/layers/layer_default/min/bush.svg
+        width:  6243
+        height: 3121
+        offset:
+          x: 0
+          y: 0
+  
   - name: 道路
     display: true
-    images:
-    - path: map/layers/layer_default/min/road.svg
-      width:  6243
-      height: 3121
-      offset:
-        x: 0
-        y: 0
-  - name: 树林
+    layers:
+    - images:
+      - path: map/layers/layer_default/min/road.svg
+        width:  6243
+        height: 3121
+        offset:
+          x: 0
+          y: 0
+
+  - name: 建筑
     display: true
-    images:
-    - path: map/layers/layer_default/min/forest.svg
-      width:  6243
-      height: 3121
-      offset:
-        x: 0
-        y: 0
-  - name: 装饰植物
-    display: true
-    zoom:
-      gte: 15
-    images:
-    - path: map/layers/layer_default/min/bush.svg
-      width:  6243
-      height: 3121
-      offset:
-        x: 0
-        y: 0
-  - name: 主要建筑
-    display: true
-    images:
-    - path: map/layers/layer_default/min/main.svg
-      width:  6243
-      height: 3121
-      offset:
-        x: 0
-        y: 0
-  - name: 民居
-    display: true
-    zoom:
-      gte: 8
-    images:
-    - path: map/layers/layer_default/min/house.svg
-      width:  6243
-      height: 3121
-      offset:
-        x: 0
-        y: 0
+    layers:  
+    - name: 主要建筑
+      display: true
+      images:
+      - path: map/layers/layer_default/min/main.svg
+        width:  6243
+        height: 3121
+        offset:
+          x: 0
+          y: 0
+    - name: 民居
+      display: true
+      zoom:
+        gte: 8
+      images:
+      - path: map/layers/layer_default/min/house.svg
+        width:  6243
+        height: 3121
+        offset:
+          x: 0
+          y: 0

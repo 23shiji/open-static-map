@@ -1,5 +1,6 @@
 <template lang="jade">
 div
+
   div#layer_panel.z-depth-3.white.collection(v-if="$store.state.display_layer_panel")
     .collection-item
       span.title Layers
@@ -9,11 +10,11 @@ div
         span.title
           input#displayPinCheckbox(type="checkbox", v-model="$store.state.display_pins")
           label(for="displayPinCheckbox`") Pins
-    template(v-for="(layer, index) in $store.state.layers")
-      .collection-item(@click="layer.display = !layer.display")
+    template(v-for="(group, index) in $store.state.groups")
+      .collection-item(@click="group.display = !group.display")
         span.title
-          input(type="checkbox", :id="`layer_item_${index}`", v-model="layer.display")
-          label(:for="`layer_item_${index}`") {{layer.name}}
+          input(type="checkbox", :id="`layer_item_${index}`", v-model="group.display")
+          label(:for="`layer_item_${index}`") {{group.name}}
   a.btn-floating.btn-large.waves-effect.waves-light.white#layer-btn(v-else, @click="$store.dispatch('show_layer_panel')")
     i.material-icons.black-text layers
 </template>
@@ -21,24 +22,6 @@ div
 import {MapPos} from '../helpers/map_pos'
 import {move_animation} from '../helpers/animation'
 export default {
-  methods: {
-    search(s){
-      this.$store.dispatch('search', s)
-    },
-    view(loc){
-      let mp = new MapPos(this.$store.state.map_info)
-      let center = mp.sphe2rect(loc.pos)
-      let zoom = loc.zoom ? 
-        Math.max(this.$store.state.map_info.view_zoom, loc.zoom.gte) : 
-        this.$store.state.map_info.view_zoom
-      zoom = Math.max(zoom, this.$store.state.zoom)
-      let dz = zoom / this.$store.state.zoom
-      move_animation(center, dz, 25, 50)
-      // this.$store.commit('move_to', center)
-      // this.$store.commit('zoom_to', {zoom: , center})
-      this.$store.dispatch('show_location', loc)
-    }
-  }
 }
 </script>
 <style>

@@ -6,7 +6,7 @@
       custom-elements(v-if="$store.state.information && $store.state.information.custom_elements")
       status-panel
       search-panel
-      layer-panel(v-if="$store.state.layers")
+      layer-panel(v-if="$store.state.groups")
       controller
       drawer(v-if="$store.state.information && $store.state.information.menu")
       loc-desc(v-if="$store.state.current_location")

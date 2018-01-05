@@ -13,8 +13,8 @@ export function set_map_info(state, map){
   state.map_info = map
 }
 
-export function set_layers(state, layers){
-  state.layers = layers
+export function set_groups(state, groups){
+  state.groups = groups
 }
 
 export function set_locations(state, locations){

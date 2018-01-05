@@ -13,7 +13,7 @@ export default new Vuex.Store({
     location_desc: '',
     search_text: '',
     query_locations: null,
-    layers: [],
+    groups: [],
     map_width: 0,
     map_height: 0,
     init_zoom: 0,
