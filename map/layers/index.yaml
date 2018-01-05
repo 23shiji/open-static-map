@@ -23,19 +23,6 @@ groups:
         offset:
           x: 0
           y: 0
-  - name: 地形图
-    display: false
-    layers:
-    - images:
-      - path: map/layers/layer_default/min/terrian.svg
-        width:  6243
-        height: 3121
-        offset:
-          x: 0
-          y: 0
-  - name: 绿地
-    display: true
-    layers:
     - name: 绿地
       images:
       - path: map/layers/layer_default/min/green.svg
@@ -72,10 +59,6 @@ groups:
         offset:
           x: 0
           y: 0
-  
-  - name: 道路
-    display: true
-    layers:
     - images:
       - path: map/layers/layer_default/min/road.svg
         width:  6243
@@ -83,12 +66,7 @@ groups:
         offset:
           x: 0
           y: 0
-
-  - name: 建筑
-    display: true
-    layers:  
     - name: 主要建筑
-      display: true
       images:
       - path: map/layers/layer_default/min/main.svg
         width:  6243
@@ -97,11 +75,20 @@ groups:
           x: 0
           y: 0
     - name: 民居
-      display: true
       zoom:
         gte: 6
       images:
       - path: map/layers/layer_default/min/house.svg
+        width:  6243
+        height: 3121
+        offset:
+          x: 0
+          y: 0
+  - name: 地形图
+    display: false
+    layers:
+    - images:
+      - path: map/layers/layer_default/min/terrian.svg
         width:  6243
         height: 3121
         offset:
