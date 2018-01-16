@@ -1,15 +1,16 @@
 <template lang="jade">
 div
   template(v-for="dx in [-1, 0, 1]")
-        img#map_img(
-          v-show= "image_loaded",
-          :src=   "image_info.path",
-          :style= "image_style(dx, 0)",
-          :width= "img_w",
-          :height="img_h",
-          @load=  "image_loaded = true",
-          ondragstart="return false;"
-        )
+    img#map_img(
+      v-show= "image_loaded",
+      :src=   "image_info.path",
+      :style= "image_style(dx, 0)",
+      :width= "img_w",
+      :height="img_h",
+      @load=  "image_loaded = true",
+      ondragstart="return false;",
+      :offset_x="dx"
+    )
   div(v-if="!image_loaded", :style="image_style(0, 0)") Loading Image
 </template>
 <script>
@@ -33,11 +34,11 @@ export default {
     },
     img_x(){
       let ww = window.innerWidth
-      return Math.floor(ww/2 - (this.x + this.offset_x) * this.zoom)
+      return Math.floor(ww/2 - (this.x - this.offset_x) * this.zoom)
     },
     img_y(){
       let wh = window.innerHeight
-      return Math.floor(wh/2 - (this.y + this.offset_y) * this.zoom)
+      return Math.floor(wh/2 - (this.y - this.offset_y) * this.zoom)
     },
     img_w(){
       return Math.floor(this.image_info.width * this.zoom)
@@ -52,14 +53,17 @@ export default {
       return this.image_info.height
     },
     offset_x(){
+      return 0
       return this.image_info.offset.x
     },
     offset_y(){
+      return 0
       return this.image_info.offset.y
     }
   },
   methods: {
     image_style(dx, dy){
+      // console.log(this.img_x, this.img_y, this.image_info.path)
       return `
         left: ${this.img_x + this.map_info.width *  this.zoom  * dx}px;
         top:  ${this.img_y + this.map_info.height * this.zoom * dy}px;

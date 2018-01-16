@@ -1,4 +1,5 @@
 map:
+  radius: 12500
   width: 6243
   height: 3121
   center: 

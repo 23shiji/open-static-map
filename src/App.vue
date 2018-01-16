@@ -6,6 +6,7 @@
       custom-elements(v-if="$store.state.information && $store.state.information.custom_elements")
       status-panel
       search-panel
+      measure-distance
       layer-panel(v-if="$store.state.groups")
       controller
       drawer(v-if="$store.state.information && $store.state.information.menu")
@@ -24,6 +25,7 @@ import LayerPanel from './components/LayerPanel'
 import StatusPanel from './components/StatusPanel'
 import Drawer from './components/Drawer'
 import CustomElements from './components/CustomElements'
+import MeasureDistance from './components/MeasureDistance'
 
 export default {
   name: 'app',
@@ -40,7 +42,8 @@ export default {
     StatusPanel,
     Drawer,
     CustomElements,
-    LayerPanel
+    LayerPanel,
+    MeasureDistance
   },
   computed: {
     logo_style(){
