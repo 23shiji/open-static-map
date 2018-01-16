@@ -11,7 +11,7 @@ div
           input#displayPinCheckbox(type="checkbox", v-model="$store.state.display_pins")
           label(for="displayPinCheckbox`") Pins
     template(v-for="(group, index) in $store.state.groups")
-      .collection-item(@click="group.display = !group.display")
+      .collection-item(@click="$store.commit('set_group_display', {index, display: !group.display})")
         span.title
           input(type="checkbox", :id="`layer_item_${index}`", v-model="group.display")
           label(:for="`layer_item_${index}`") {{group.name}}
