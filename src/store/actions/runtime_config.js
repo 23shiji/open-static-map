@@ -3,10 +3,38 @@ import YAML from 'js-yaml'
 import runtime_config_path from '../../runtime_config_path.yaml'
 
 export function load_config_files({commit, state}){
-  let map_prom = axios
-  .get(runtime_config_path.layers_index)
-  .then(res => YAML.safeLoad(res.data) )
-  
+
+  let map_prom = new Promise((resolve, reject) => {
+    axios
+    .get(runtime_config_path.layers_index)
+    .then(res => YAML.safeLoad(res.data))
+    .then(res => {
+      let async_groups = res.groups.filter(obj => obj.async)
+      if(async_groups.length == 0){
+        resolve(res)
+      }else{
+        Promise.all(
+          async_groups.map(dst => {
+            return new Promise((resolve, reject) => {
+              axios
+                .get(dst.async)
+                .then(r => YAML.safeLoad(r.data))
+                .then(src => resolve({src, dst}))
+                .catch(err => reject(err))
+            })
+          })
+        ).then(async_objs => {
+          for(let {dst, src} of async_objs){
+            Object.assign(dst, src)
+          }
+          resolve(res)
+        })
+      }
+    }).catch(err => {
+      reject(err)
+    })
+  })
+
   let loc_index = axios
     .get(runtime_config_path.locations.index)
     .then(res => YAML.safeLoad(res.data) )

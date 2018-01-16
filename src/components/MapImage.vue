@@ -34,17 +34,17 @@ export default {
     },
     img_x(){
       let ww = window.innerWidth
-      return Math.floor(ww/2 - (this.x - this.offset_x) * this.zoom)
+      return ww/2 - (this.x - this.offset_x) * this.zoom
     },
     img_y(){
       let wh = window.innerHeight
-      return Math.floor(wh/2 - (this.y - this.offset_y) * this.zoom)
+      return wh/2 - (this.y - this.offset_y) * this.zoom
     },
     img_w(){
-      return Math.floor(this.image_info.width * this.zoom)
+      return this.image_info.width * this.zoom
     },
     img_h(){
-      return Math.floor(this.image_info.height * this.zoom)
+      return this.image_info.height * this.zoom
     },
     width(){
       return this.image_info.width
@@ -53,11 +53,9 @@ export default {
       return this.image_info.height
     },
     offset_x(){
-      return 0
       return this.image_info.offset.x
     },
     offset_y(){
-      return 0
       return this.image_info.offset.y
     }
   },

@@ -28,7 +28,7 @@ export function image_visiable(image_info){
     offset: {x, y}
   } = image_info
   return !(
-    x + width < fx || x > tx ||
-    y + height < fy || y > ty
+    x + width < fx-width || x > tx+width ||
+    y + height < fy-height || y > ty+height
   )
 }
