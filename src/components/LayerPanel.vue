@@ -13,7 +13,7 @@ div
     template(v-for="(group, index) in $store.state.groups")
       .collection-item(@click="$store.commit('set_group_display', {index, display: !group.display})")
         span.title
-          input(type="checkbox", :id="`layer_item_${index}`", v-model="group.display")
+          input(type="checkbox", :id="`layer_item_${index}`", v-model="group.display",@click="$store.commit('set_group_display', {index, display: !group.display})")
           label(:for="`layer_item_${index}`") {{group.name}}
   a.btn-floating.btn-large.waves-effect.waves-light.white#layer-btn(v-else, @click="$store.dispatch('show_layer_panel')")
     i.material-icons.black-text layers
