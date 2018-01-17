@@ -1,6 +1,8 @@
 import axios  from 'axios'
 import YAML from 'js-yaml'
 import runtime_config_path from '../../runtime_config_path.yaml'
+import {MapPos} from '../../helpers/map_pos'
+
 
 export function load_config_files({commit, state}){
 
@@ -94,5 +96,12 @@ export function load_config_files({commit, state}){
     commit('set_locations', locations)
     commit('set_information', information)
     commit('data_loaded')
+
+    let [lat, lng, zoom = 1] = window.location.hash.slice(1).split(",").map(x => parseInt(x))
+    let mp = new MapPos(map)
+    lat = -lat // 历史遗留问题
+    let [x, y] = mp.sphe2rect({lng, lat})
+    commit('zoom_to', {zoom, center: [x, y]})
+    commit('move_to', [x, y])
   })
 }

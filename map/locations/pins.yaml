@@ -10,6 +10,18 @@ default:
   label:
     width: 80 # px
     style: 'color: black;'
+comm:
+  icon:
+    path: map/locations/icons/test.svg
+    width:  30
+    height: 30
+    offset:
+      x: -15
+      y: -30
+    style: ''
+  label:
+    width: 80 # px
+    style: ""
 unknown:
   icon:
     path: map/locations/icons/test.svg

@@ -3,6 +3,32 @@ default: # 模板名
   tags: [标准模板]
   zoom: # 可选
     gte: 0.0000001
+gov:
+  pin:  comm
+  tags: [政府部门]
+  zoom: # 可选
+    gte: 1
+pub:
+  pin:  comm
+  tags: [公共场所]
+  zoom: # 可选
+    gte: 1
+party:
+  pin:  comm
+  tags: [政党所有]
+  zoom: # 可选
+    gte: 1
+com:
+  pin:  comm
+  tags: [商业机构]
+  zoom: # 可选
+    gte: 1
+pri:
+  pin:  comm
+  tags: [私人住宅]
+  zoom: # 可选
+    gte: 1
+
 unknown:
   pin: unknown # 表签名 标签信息见 map/icons/index.yaml
   tags: [未登记地点]
