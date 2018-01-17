@@ -28,7 +28,11 @@ pri:
   tags: [私人住宅]
   zoom: # 可选
     gte: 1
-
+geo:
+  pin:  comm
+  tags: [私人住宅]
+  zoom: # 可选
+    gte: 1
 unknown:
   pin: unknown # 表签名 标签信息见 map/icons/index.yaml
   tags: [未登记地点]
