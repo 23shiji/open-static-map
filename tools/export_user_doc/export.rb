@@ -18,7 +18,7 @@ Dir[$src_dir+"/*.ymd"].each do |f|
   meta, desc = YAML.load_stream File.open(f, "r:bom|utf-8"){|f| f.read}
   next if $planet != meta['planet']
   alt = indices.detect{|x| x['name'] == meta['title']}
-  next if !alt.nil? && !alt['version'].nil? && alt['version'] >= meta['version']
+  next if !alt.nil? && !alt['version'].nil? && alt['version'] > meta['version']
   indices.delete alt
   desc_file  = $desc_dir + "/" + PinYin.of_string(meta['title'], true).join("_") +".md"
   @desc = desc
@@ -31,7 +31,8 @@ Dir[$src_dir+"/*.ymd"].each do |f|
       'lng' =>  meta['pos']['lng']
     })),
     'desc' => desc_file,
-    'template' => meta['type']
+    'template' => meta['type'],
+    'version' => meta['version']
   )
 end
 
