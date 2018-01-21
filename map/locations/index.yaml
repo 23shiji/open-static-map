@@ -1,761 +1,205 @@
-- id: null_island
-  desc: map/locations/descriptions/null_island.md # 描述文件地址 Markdown
-  name: Null Island
-  template: default # 选中的模板内容会自动插入
-  pos: # 坐标(球面)
-    lat: 0
-    lng: 0
-  tags: [都市传说]
-- id: site_12
-  desc: map/locations/descriptions/site_12.md # 描述文件地址 Markdown
-  name: Site-12
-  template: [default] # 选中的模板内容会自动插入
-  pos: # 坐标(球面)
-    lat: 10
-    lng: 10
-  tags: ["SCP"]
-- name: 天梯区
-  template: unknown
-  pos:
-    lng: -38.69846838459071
-    lat: 8.540499339154138
-- name: 中国海军陆战队驿宁特遣营总部
-  template: unknown
-  pos:
-    lng: -38.69846838459071
-    lat: 8.540499339154138
-- name: 泪湾区
-  template: unknown
-  pos:
-    lng: -8.467387498613846
-    lat: -14.689236084752594
-- name: 阑珊岛
-  template: unknown
-  pos:
-    lng: -8.467387498613846
-    lat: -14.689236084752594
-- name: 交通设施
-  template: unknown
-  pos:
-    lng: -4.621392187821812
-    lat: -15.70398590195451
-- name: 道路
-  template: unknown
-  pos:
-    lng: -11.806765977895225
-    lat: -18.337766741429036
-- name: 码头
-  template: unknown
-  pos:
-    lng: -5.966727534839038
-    lat: -13.14537327779557
-- name: 西码头
-  template: unknown
-  pos:
-    lng: -11.85870735223449
-    lat: -11.69974046779879
-- name: 东码头
-  template: unknown
-  pos:
-    lng: 5.817232099951951
-    lat: -16.03663889778916
-- name: 垃圾处理站
-  template: unknown
-  pos:
-    lng: 4.581984622777526
-    lat: -16.908123998718366
-- name: 市政设施
-  template: unknown
-  pos:
-    lng: -10.818502780256807
-    lat: -14.88438252391633
-- name: 驿宁消防局阑珊岛分局
-  template: unknown
-  pos:
-    lng: -6.917429120615083
-    lat: -13.066739826978534
-- name: 阑珊小学
-  template: unknown
-  pos:
-    lng: -11.400064448653154
-    lat: -15.69889760069357
-- name: 住宅区
-  template: unknown
-  pos:
-    lng: -9.478292442780685
-    lat: -14.057318077628864
-- name: 岬苑
-  template: unknown
-  pos:
-    lng: -9.478292442780685
-    lat: -14.057318077628864
-- name: 景点
-  template: unknown
-  pos:
-    lng: -2.87215281114851
-    lat: -13.980865107337394
-- name: 驿宁大酒店
-  template: unknown
-  pos:
-    lng: -3.7733037001441687
-    lat: -13.61376161486703
-- name: 阑珊寺
-  template: unknown
-  pos:
-    lng: -1.0698510331571356
-    lat: -14.715072092278106
-- name: 中区
-  template: unknown
-  pos:
-    lng: -27.214762774884747
-    lat: -15.949262476064732
-- name: 植被_1_
-  template: unknown
-  pos:
-    lng: -23.99338496436644
-    lat: -16.68330900573895
-- name: 泪湾长廊公园
-  template: unknown
-  pos:
-    lng: -19.552559008345582
-    lat: -17.482289112856122
-- name: 广场_1_
-  template: unknown
-  pos:
-    lng: -19.713642479577118
-    lat: -16.687608138417204
-- name: 树木_2_
-  template: unknown
-  pos:
-    lng: -19.526419829875437
-    lat: -17.567277885212917
-- name: 房屋_1_
-  template: unknown
-  pos:
-    lng: -19.98529216722733
-    lat: -16.40042518423583
-- name: 鲲川湿地公园
-  template: unknown
-  pos:
-    lng: -26.997558865929847
-    lat: -11.972547260493428
-- name: 小公园
-  template: unknown
-  pos:
-    lng: -25.71896087046065
-    lat: -17.547117956698855
-- name: 市内绿地
-  template: unknown
-  pos:
-    lng: -25.504516076136184
-    lat: -21.084896449093392
-- name: 市内树木
-  template: unknown
-  pos:
-    lng: -30.744425319994747
-    lat: -9.355504500305784
-- name: 交通设施_1_
-  template: unknown
-  pos:
-    lng: -30.830126048867044
-    lat: -7.38415473344341
-- name: 支路
-  template: unknown
-  pos:
-    lng: -30.830126048867044
-    lat: -7.38415473344341
-- name: 码头_1_
-  template: unknown
-  pos:
-    lng: -26.520443811354426
-    lat: -8.691871423994158
-- name: 游艇码头
-  template: unknown
-  pos:
-    lng: -26.520443811354426
-    lat: -8.691871423994158
+---
 - name: 中区游艇码头
-  template: unknown
   pos:
     lng: -20.463258049014883
     lat: -11.883835309195774
-- name: 鲲川游艇码头
-  template: unknown
+  desc: map/locations/descriptions/zhong1_qu1_you2_ting3_ma3_tou2.md
+  template: transportation_facility
+- name: 共和国政府大楼
   pos:
-    lng: -28.17240356471973
-    lat: -7.821335818939147
-- name: 市政设施_1_
-  template: unknown
-  pos:
-    lng: -24.59710654178295
-    lat: -19.894116520608407
-- name: 西山公园
-  template: unknown
-  pos:
-    lng: -22.47406224383076
-    lat: -24.321758297679878
-- name: 树林
-  template: unknown
-  pos:
-    lng: -22.471732940893816
-    lat: -24.297736903236157
-- name: 宪法公园
-  template: unknown
-  pos:
-    lng: -23.881396089936516
-    lat: -18.781384677650564
-- name: 陈霓姗纪念医院
-  template: unknown
-  pos:
-    lng: -23.505257087938475
-    lat: -20.509695610381286
-- name: 驿宁市公安局
-  template: unknown
-  pos:
-    lng: -24.386554541086042
-    lat: -20.56784043575776
-- name: 驿宁市第一中学
-  template: unknown
-  pos:
-    lng: -27.19210595867372
-    lat: -17.781326097404687
-- name: 鲲川小学
-  template: unknown
-  pos:
-    lng: -29.206379945539
-    lat: -10.14957038342412
-- name: 公安分局1
-  template: unknown
-  pos:
-    lng: -29.973647284959156
-    lat: -8.53044857417494
-- name: 消防站1
-  template: unknown
-  pos:
-    lng: -30.166737145603065
-    lat: -8.097145145786612
-- name: 泪湾海上消防局
-  template: unknown
-  pos:
-    lng: -32.95974291206153
-    lat: -2.780642422300545
-- name: 驿宁水上救援中心
-  template: unknown
-  pos:
-    lng: -32.387079529072565
-    lat: -3.5527507209227878
-- name: 驿宁海事局
-  template: unknown
-  pos:
-    lng: -32.76967803940414
-    lat: -3.855322012175577
-- name: 公共建筑_1_
-  template: unknown
-  pos:
-    lng: -21.792339770122368
-    lat: -16.36121518232413
-- name: 水池
-  template: unknown
-  pos:
-    lng: -20.024344065353205
-    lat: -17.22379685998078
-- name: 公民广场
-  template: unknown
-  pos:
-    lng: -21.08012638154733
-    lat: -16.740856456263998
-- name: 共和国政府大楼及市政厅
-  template: unknown
-  pos:
-    lng: -21.898097068716964
-    lat: -17.41440884331945
-- name: 市民综合运动馆
-  template: unknown
-  pos:
-    lng: -21.650619143440622
-    lat: -15.763147378644646
-- name: 篮球场
-  template: unknown
-  pos:
-    lng: -22.09820759250357
-    lat: -16.175650833066314
-- name: 网球场
-  template: unknown
-  pos:
-    lng: -21.439418548774626
-    lat: -15.146378564562653
-- name: 滑板公园_2_
-  template: unknown
-  pos:
-    lng: -20.76931763575206
-    lat: -15.52222204421659
-- name: 驿宁大球场
-  template: unknown
-  pos:
-    lng: -22.314336586299987
-    lat: -14.739909923800198
-- name: 议会大楼
-  template: unknown
-  pos:
-    lng: -22.501802018260463
-    lat: -17.93237023389939
-- name: 公民监督委员会大楼
-  template: unknown
-  pos:
-    lng: -22.432647765497336
-    lat: -16.74486863184876
+    lat: -17.22
+    lng: -22.079
+  desc: map/locations/descriptions/gong4_he2_guo2_zheng4_fu3_da4_lou2.md
+  template: municipal_building
 - name: 城邦法院
-  template: unknown
   pos:
     lng: -21.932782316194107
     lat: -18.6147741108619
-- name: 检察院大楼
-  template: unknown
+  desc: map/locations/descriptions/cheng2_bang1_fa3_yuan4.md
+  template: municipal_building
+- name: 北美联邦驻驿宁大使馆
   pos:
-    lng: -21.693368572801546
-    lat: -18.9080166613265
-- name: 共和国文化艺术中心
-  template: unknown
-  pos:
-    lng: -21.215963479096587
-    lat: -18.20591477090676
-- name: 共和国中央智库及数据库集群
-  template: unknown
-  pos:
-    lng: -23.195569437770303
-    lat: -17.07619032361424
+    lat: -19.677
+    lng: -19.503
+  desc: map/locations/descriptions/bei3_mei3_lian2_bang1_zhu4_yi4_ning2_da4_shi3_guan3.md
+  template: office_building
 - name: 宪法广场
-  template: unknown
   pos:
     lng: -23.106631427198465
     lat: -18.45293175264338
-- name: 宪法SOHO一期
-  template: unknown
+  desc: map/locations/descriptions/xian4_fa3_guang3_chang3.md
+  template: municipal_building
+- name: 驿宁市政府大楼
   pos:
-    lng: -22.4226717924075
-    lat: -19.27857097084268
+    lat: -17.642
+    lng: -21.744
+  desc: map/locations/descriptions/yi4_ning2_shi4_zheng4_fu3_da4_lou2.md
+  template: municipal_building
+- name: 驿宁市民综合运动馆
+  pos:
+    lat: -15.772
+    lng: -21.516
+  desc: map/locations/descriptions/yi4_ning2_shi4_min2_zong1_he2_yun4_dong4_guan3.md
+  template: public_facility
+- name: 共和国图书馆
+  pos:
+    lat: -17.054
+    lng: -19.734
+  desc: map/locations/descriptions/gong4_he2_guo2_tu2_shu1_guan3.md
+  template: municipal_building
+- name: 驿宁公民论坛
+  pos:
+    lat: -16.244
+    lng: -20.506
+  desc: map/locations/descriptions/yi4_ning2_gong1_min2_lun4_tan2.md
+  template: public_facility
 - name: 宪法SOHO二期
-  template: unknown
   pos:
     lng: -23.79624219125421
     lat: -17.595360461390584
-- name: 住宅
-  template: unknown
-  pos:
-    lng: -29.67662637366257
-    lat: -15.106748341552276
-- name: 外交公寓一期
-  template: unknown
-  pos:
-    lng: -20.47613647284959
-    lat: -19.063565706962052
-- name: 外交公寓二期
-  template: unknown
-  pos:
-    lng: -20.03557042711364
-    lat: -20.809319458318413
-- name: 海湖苑
-  template: unknown
-  pos:
-    lng: -18.92369483859082
-    lat: -21.68313054389921
-- name: 房屋_2_
-  template: unknown
-  pos:
-    lng: -18.856431674063174
-    lat: -21.79581365324084
-- name: 树木_3_
-  template: unknown
-  pos:
-    lng: -19.012412633183658
-    lat: -21.534505408301925
-- name: 岩光湖居
-  template: unknown
-  pos:
-    lng: -36.022857768239646
-    lat: -16.043102165536354
-- name: 树木_1_
-  template: unknown
-  pos:
-    lng: -35.099415935768576
-    lat: -16.055758993793262
-- name: 房屋
-  template: unknown
-  pos:
-    lng: -37.799069864370495
-    lat: -16.018757143837973
-- name: 宪法公寓
-  template: unknown
-  pos:
-    lng: -23.73173714560312
-    lat: -18.9606968920218
-- name: 公寓1
-  template: unknown
-  pos:
-    lng: -24.420410860163344
-    lat: -19.550330022428696
-- name: 公寓2
-  template: unknown
-  pos:
-    lng: -25.11532532436331
-    lat: -20.114818327459133
-- name: 公寓3
-  template: unknown
-  pos:
-    lng: -25.23099471407977
-    lat: -18.615024030759358
-- name: 排屋1
-  template: unknown
-  pos:
-    lng: -25.725669262781878
-    lat: -19.23165331624479
-- name: 排屋2
-  template: unknown
-  pos:
-    lng: -26.418677919269555
-    lat: -19.770686078180077
-- name: 学苑花园
-  template: unknown
-  pos:
-    lng: -26.577753003363767
-    lat: -18.604685036847172
-- name: 排屋3
-  template: unknown
-  pos:
-    lng: -28.179406671320976
-    lat: -18.954588000943104
-- name: 排屋4
-  template: unknown
-  pos:
-    lng: -27.29674112720528
-    lat: -20.536088112784356
-- name: 排屋5
-  template: unknown
-  pos:
-    lng: -26.658067035079256
-    lat: -21.414288746738663
-- name: 排屋6
-  template: unknown
-  pos:
-    lng: -25.708087040093602
-    lat: -20.602476073722187
-- name: 排屋7
-  template: unknown
-  pos:
-    lng: -25.804344408594716
-    lat: -22.11105941319174
-- name: 排屋8
-  template: unknown
-  pos:
-    lng: -25.11158268689502
-    lat: -21.302219755572835
-- name: 排屋_xFF08_小_xFF09_
-  template: unknown
-  pos:
-    lng: -26.61386203582495
-    lat: -20.645720978024272
-- name: 西山雅寓
-  template: unknown
-  pos:
-    lng: -24.483434824052154
-    lat: -22.165404136967467
-- name: 公寓4
-  template: unknown
-  pos:
-    lng: -25.728140317155237
-    lat: -17.818087151553982
-- name: 勤政公寓
-  template: unknown
-  pos:
-    lng: -26.359256367131195
-    lat: -17.036400192246077
-- name: 公寓5
-  template: unknown
-  pos:
-    lng: -28.266487265737624
-    lat: -13.715527074655554
-- name: 公寓7
-  template: unknown
-  pos:
-    lng: -25.57635031234983
-    lat: -14.443894585068875
-- name: 公寓8
-  template: unknown
-  pos:
-    lng: -26.63318276469647
-    lat: -13.86951618071133
-- name: 公寓9
-  template: unknown
-  pos:
-    lng: -23.92949783757811
-    lat: -14.823196090996476
-- name: 排屋9
-  template: unknown
-  pos:
-    lng: -24.90276239570133
-    lat: -23.408594448166397
-- name: 公寓10
-  template: unknown
-  pos:
-    lng: -24.356548774627555
-    lat: -20.987130567125917
-- name: 别墅1
-  template: unknown
-  pos:
-    lng: -23.48851170453767
-    lat: -21.806556735478566
-- name: 排屋10
-  template: unknown
-  pos:
-    lng: -22.43174020357347
-    lat: -21.183603521598542
-- name: 排屋11
-  template: unknown
-  pos:
-    lng: -20.737216600902855
-    lat: -23.15420371314721
-- name: 公寓11
-  template: unknown
-  pos:
-    lng: -29.378338298894732
-    lat: -14.153338673502091
-- name: 公寓12
-  template: unknown
-  pos:
-    lng: -32.271200384430614
-    lat: -12.975420538289015
-- name: 公寓13
-  template: unknown
-  pos:
-    lng: -31.96367131186929
-    lat: -12.398603011855172
-- name: 公寓15
-  template: unknown
-  pos:
-    lng: -33.03796391158096
-    lat: -10.900729905707863
-- name: 公寓16
-  template: unknown
-  pos:
-    lng: -31.790759250360395
-    lat: -11.891722204421654
-- name: 公寓17
-  template: unknown
-  pos:
-    lng: -25.060134550696773
-    lat: -17.334876642101904
-- name: 公寓18
-  template: unknown
-  pos:
-    lng: -25.7063661701105
-    lat: -16.648094841396983
-- name: 公寓19
-  template: unknown
-  pos:
-    lng: -25.737165922976573
-    lat: -15.673590698951813
-- name: 公寓20
-  template: unknown
-  pos:
-    lng: -23.54229391463892
-    lat: -14.318869971745656
-- name: 别墅2
-  template: unknown
-  pos:
-    lng: -36.301127759331024
-    lat: -6.679843480858523
-- name: 别墅3
-  template: unknown
-  pos:
-    lng: -37.76919503690286
-    lat: -4.072507578931834
-- name: 别墅4
-  template: unknown
-  pos:
-    lng: -37.71410571840457
-    lat: -3.44203476449853
-- name: 别墅5
-  template: unknown
-  pos:
-    lng: -32.459800924738914
-    lat: -6.910805112522866
-- name: 别墅6
-  template: unknown
-  pos:
-    lng: -35.18697617095859
-    lat: -4.229832661100289
-- name: 别墅7
-  template: unknown
-  pos:
-    lng: -31.45906115508717
-    lat: -9.460393646724953
-- name: 别墅8
-  template: unknown
-  pos:
-    lng: -27.136494390959314
-    lat: -10.711419140637943
-- name: 商业
-  template: unknown
-  pos:
-    lng: -25.404191968147217
-    lat: -17.83372590836268
-- name: 组群1
-  template: unknown
-  pos:
-    lng: -24.513264456190967
-    lat: -16.80903396347324
-- name: 组群2
-  template: unknown
-  pos:
-    lng: -24.97876982220089
-    lat: -16.162422300544677
-- name: 组群3
-  template: unknown
-  pos:
-    lng: -23.830324843825053
-    lat: -16.30276033322653
-- name: 组群4
-  template: unknown
-  pos:
-    lng: -24.32200864968766
-    lat: -15.742012175584776
-- name: 组群5
-  template: unknown
-  pos:
-    lng: -23.639553099471414
-    lat: -15.311779878244153
-- name: 组群6
-  template: unknown
-  pos:
-    lng: -23.07751081210955
-    lat: -15.709657161166291
-- name: 组群7
-  template: unknown
-  pos:
-    lng: -21.409434566714708
-    lat: -20.499008330663244
-- name: 社安后巷_1_
-  template: unknown
-  pos:
-    lng: -20.743834189028547
-    lat: -20.227916996913947
-- name: 组群8
-  template: unknown
-  pos:
-    lng: -21.01648589277133
-    lat: -19.71278070215591
-- name: 组群9
-  template: unknown
-  pos:
-    lng: -20.367075218362203
-    lat: -21.830985355372533
-- name: 组群10
-  template: unknown
-  pos:
-    lng: -19.16731783808396
-    lat: -23.210659876220504
-- name: 驿宁食街
-  template: unknown
-  pos:
-    lng: -24.29942460773458
-    lat: -19.364267061839186
-- name: 组群11
-  template: unknown
-  pos:
-    lng: -27.648801743667207
-    lat: -19.260840389984907
-- name: 其他分布
-  template: unknown
-  pos:
-    lng: -29.62346032902471
-    lat: -14.368036725718596
-- name: 景点_1_
-  template: unknown
-  pos:
-    lng: -26.711143928865937
-    lat: -15.448226337082474
-- name: 勤政园
-  template: unknown
-  pos:
-    lng: -26.953202369732253
-    lat: -15.830329382185269
-- name: 树木
-  template: unknown
-  pos:
-    lng: -26.941132727478134
-    lat: -15.845760597093658
+  desc: map/locations/descriptions/xian4_fa3_SOHO_er4_qi1.md
+  template: huge_complex
+- name: 驿宁开拓博物馆
+  pos:
+    lat: -17.633
+    lng: -20.442
+  desc: map/locations/descriptions/yi4_ning2_kai1_tuo4_bo2_wu4_guan3.md
+  template: municipal_building
+- name: 以色列驻驿宁大使馆
+  pos:
+    lat: -19.124
+    lng: -19.87
+  desc: map/locations/descriptions/yi3_se4_lie4_zhu4_yi4_ning2_da4_shi3_guan3.md
+  template: office_building
+- name: 英国驻驿宁大使馆
+  pos:
+    lat: -18.816
+    lng: -19.327
+  desc: map/locations/descriptions/ying1_guo2_zhu4_yi4_ning2_da4_shi3_guan3.md
+  template: office_building
+- name: 驿宁市第一中学
+  pos:
+    lng: -27.19210595867372
+    lat: -17.781326097404687
+  desc: map/locations/descriptions/yi4_ning2_shi4_di4_yi1_zhong1_xue2.md
+  template: municipal_building
+- name: 公民监督委员会大楼
+  pos:
+    lng: -22.432647765497336
+    lat: -16.74486863184876
+  desc: map/locations/descriptions/gong1_min2_jian1_du1_wei3_yuan2_hui4_da4_lou2.md
+  template: municipal_building
+- name: 共和国中央智库及数据库集群
+  pos:
+    lng: -23.195569437770303
+    lat: -17.07619032361424
+  desc: map/locations/descriptions/gong4_he2_guo2_zhong1_yang1_zhi4_ku4_ji2_shu4_ju4_ku4_ji2_qun2.md
+  template: municipal_building
+- name: 陈霓姗纪念医院
+  pos:
+    lng: -23.505257087938475
+    lat: -20.509695610381286
+  desc: map/locations/descriptions/chen2_ni2_shan1_ji4_nian4_yi1_yuan4.md
+  template: municipal_building
+- name: 欧罗巴合众国驻驿宁大使馆
+  pos:
+    lat: -17.619
+    lng: -19.146
+  desc: map/locations/descriptions/ou1_luo2_ba1_he2_zhong4_guo2_zhu4_yi4_ning2_da4_shi3_guan3.md
+  template: office_building
+- name: 共和国议会大楼
+  pos:
+    lat: -17.956
+    lng: -22.505
+  desc: map/locations/descriptions/gong4_he2_guo2_yi4_hui4_da4_lou2.md
+  template: municipal_building
+- name: 议事厅
+  pos:
+    lat: -17.727
+    lng: -22.693
+  desc: map/locations/descriptions/yi4_shi4_ting1.md
+  template: municipal_building
 - name: 土地庙
-  template: unknown
   pos:
     lng: -20.72541086016338
     lat: -20.52018743992309
+  desc: map/locations/descriptions/tu3_di4_miao4.md
+  template: landmark
+- name: 中华人民共和国驻驿宁大使馆
+  pos:
+    lat: -16.361
+    lng: -22.756
+  desc: map/locations/descriptions/zhong1_hua2_ren2_min2_gong4_he2_guo2_zhu4_yi4_ning2_da4_shi3_guan3.md
+  template: office_building
+- name: 共和国文化艺术中心
+  pos:
+    lng: -21.215963479096587
+    lat: -18.20591477090676
+  desc: map/locations/descriptions/gong4_he2_guo2_wen2_hua4_yi4_shu4_zhong1_xin1.md
+  template: municipal_building
+- name: 驿宁大球场
+  pos:
+    lng: -22.314336586299987
+    lat: -14.739909923800198
+  desc: map/locations/descriptions/yi4_ning2_da4_qiu2_chang3.md
+  template: public_facility
+- name: 驿宁公民广场
+  pos:
+    lat: -16.744
+    lng: -21.042
+  desc: map/locations/descriptions/yi4_ning2_gong1_min2_guang3_chang3.md
+  template: public_facility
+- name: 公民大会
+  pos:
+    lat: -18.156
+    lng: -22.308
+  desc: map/locations/descriptions/gong1_min2_da4_hui4.md
+  template: municipal_building
+- name: 检察院大楼
+  pos:
+    lng: -21.693368572801546
+    lat: -18.9080166613265
+  desc: map/locations/descriptions/jian3_cha2_yuan4_da4_lou2.md
+  template: municipal_building
+- name: 驿宁市公安局
+  pos:
+    lng: -24.386554541086042
+    lat: -20.56784043575776
+  desc: map/locations/descriptions/yi4_ning2_shi4_gong1_an1_ju2.md
+  template: municipal_building
 - name: 执政官邸
-  template: unknown
   pos:
     lng: -25.15158938010572
     lat: -9.356185116949717
-- name: 其他
-  template: unknown
+  desc: map/locations/descriptions/zhi2_zheng4_guan1_di3.md
+  template: landmark
+- name: 斯拉夫共和国驻驿宁大使馆
   pos:
-    lng: -20.1115030834535
-    lat: -18.358343794342446
-- name: 中国大使馆_1_
-  template: unknown
+    lat: -18.412
+    lng: -20.197
+  desc: map/locations/descriptions/si1_la1_fu1_gong4_he2_guo2_zhu4_yi4_ning2_da4_shi3_guan3.md
+  template: office_building
+- name: 鲲川游艇码头
   pos:
-    lng: -22.72484308579456
-    lat: -16.322206393414376
-- name: 使馆区
-  template: unknown
+    lng: -28.17240356471973
+    lat: -7.821335818939147
+  desc: map/locations/descriptions/kun1_chuan1_you2_ting3_ma3_tou2.md
+  template: transportation_facility
+- name: 东码头
   pos:
-    lng: -19.452238711736726
-    lat: -18.680777520774
-- name: 美联大使馆
-  template: unknown
+    lng: 5.817232099951951
+    lat: -16.03663889778916
+  desc: map/locations/descriptions/dong1_ma3_tou2.md
+  template: transportation_facility
+- name: 宪法SOHO一期
   pos:
-    lng: -19.51410173680236
-    lat: -19.649739094612542
-- name: 欧罗巴大使馆
-  template: unknown
+    lng: -22.4226717924075
+    lat: -19.27857097084268
+  desc: map/locations/descriptions/xian4_fa3_SOHO_yi1_qi1.md
+  template: huge_complex
+- name: 西码头
   pos:
-    lng: -19.154102835175394
-    lat: -17.586474847805206
-- name: 英国大使馆
-  template: unknown
-  pos:
-    lng: -19.322628980822145
-    lat: -18.795955113454326
-- name: 斯拉夫大使馆
-  template: unknown
-  pos:
-    lng: -20.126501681883695
-    lat: -18.360442165972444
-- name: 以色列大使馆
-  template: unknown
-  pos:
-    lng: -19.948008970046487
-    lat: -19.15712912528035
-- name: 外交大楼一期
-  template: unknown
-  pos:
-    lng: -19.754711677078348
-    lat: -18.411517141941687
-- name: 外交大楼二期
-  template: unknown
-  pos:
-    lng: -19.172902295732513
-    lat: -18.16551177765605
-- name: 大使饭店
-  template: unknown
-  pos:
-    lng: -19.437022180631743
-    lat: -19.271125988633884
-- name: 驿共大楼
-  template: unknown
-  pos:
-    lng: -24.16785679961555
-    lat: -24.374702018583775
-- name: 社科院大楼
-  template: unknown
-  pos:
-    lng: -25.213161941374324
-    lat: -13.716882409484128
+    lat: -11.343
+    lng: -11.726
+  desc: map/locations/descriptions/xi_ma3_tou2.md
+  template: transportation_facility
