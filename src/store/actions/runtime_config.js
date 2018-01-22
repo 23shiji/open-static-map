@@ -97,6 +97,10 @@ export function load_config_files({commit, state}){
     commit('set_information', information)
     commit('data_loaded')
 
+    if(information.title){
+      document.title = information.title
+    }
+
     if(window.location.hash[0] != '#') return;
     let [lat, lng, zoom = 1] = window.location.hash.slice(1).split(",").map(x => parseInt(x))
     if(isNaN(lat) || isNaN(lng)) return;

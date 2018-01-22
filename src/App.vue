@@ -52,21 +52,7 @@ export default {
       let opacity = this.logo_focused ? focused : out
       return `opacity: ${opacity}; width: ${width}; height: ${height}`
       
-    },
-    title: {
-      get(){
-        return document.title
-      },
-      set(t){
-        document.title = t
-        this.map_name  = t
-      }
     }
-  },
-  methods: {
-  },
-  created(){
-    this.title = 'Yipolis Republic'
   }
 }
 </script>
