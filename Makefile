@@ -1,6 +1,6 @@
 publish:
 	git add .
-	git commit -m autosave
+	git commit -m autosave || echo "master clear"
 	git push origin master
 	git checkout -b static
 	yarn build
