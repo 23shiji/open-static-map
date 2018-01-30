@@ -52,18 +52,38 @@ export function load_config_files({commit, state}){
   let info = axios
     .get(runtime_config_path.information)
     .then(res => YAML.safeLoad(res.data) )
-    
+  
+  let plugins = info
+    .then(info => {
+      if(!info.plugins){
+        return []
+      }else{
+        return Promise.all(info.plugins.map(plg => {
+          return Promise.all([
+            axios.get(plg.html).then(res => res.data),
+            plg.css,
+            plg.javascript
+          ])
+          .then(([html, css, javascript]) => {
+            return {html, css, javascript}
+          })
+        }))
+      }
+    })
+
   Promise.all([
     map_prom, 
     loc_index, 
     loc_template, 
     loc_pin,
-    info]).then(([
+    info,
+    plugins]).then(([
       {map, groups}, 
       locations, 
       templates, 
       pins,
-      information]) => {
+      information,
+      plugins]) => {
     for(let loc of locations){
       let temps = []
       if(!loc.template){
@@ -95,7 +115,9 @@ export function load_config_files({commit, state}){
     commit('set_groups', groups)
     commit('set_locations', locations)
     commit('set_information', information)
+    commit('set_plugins', plugins)
     commit('data_loaded')
+  
 
     if(information.title){
       document.title = information.title

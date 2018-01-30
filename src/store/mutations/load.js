@@ -13,6 +13,10 @@ export function set_map_info(state, map){
   state.map_info = map
 }
 
+export function set_plugins(state, plugins){
+  state.plugins = plugins
+}
+
 export function set_groups(state, groups){
   state.groups = groups
 }

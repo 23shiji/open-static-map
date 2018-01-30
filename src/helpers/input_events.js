@@ -134,8 +134,13 @@ export function moving([x, y]){
   mouse_move_stat.y = y
 }
 
-export function stop_moving(){
+export function stop_moving([px, py]){
   mouse_move_stat.moving = false
+  let vw = window.innerWidth
+  let vh = window.innerHeight
+  let x = this.x + (px - vw / 2) / this.zoom
+  let y = this.y + (py - vh / 2) / this.zoom
+  this.$store.dispatch('on_user_click', [x, y])
 }
 
 export function key_dmove(dx, dy){
