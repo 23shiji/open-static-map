@@ -3,7 +3,7 @@
   #map-container
     template(v-show="$store.state.data_loaded")
       map-view
-      custom-elements(v-if="$store.state.information && $store.state.information.custom_elements")
+      custom-elements(v-if="$store.state.information")
       status-panel
       search-panel
       measure-distance

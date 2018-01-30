@@ -28,7 +28,9 @@ export default new Vuex.Store({
     display_layer_panel: false,
     display_pins: true,
     ruler_points: null,
-    ruler_distance: 0
+    ruler_distance: 0,
+    plugins: [],
+    event_callbacks: {}
   },
   getters: {
     displayed_map_width(state){

@@ -62,10 +62,10 @@ export default {
     dmove([dx, dy]){
       let nx = this.x + dx
       let ny = this.y + dy
-      this.$store.commit('move_to', [nx, ny])
+      this.$store.dispatch('move_to', [nx, ny])
     },
     dzoom(scale, center = null){
-      this.$store.commit('zoom_to', {
+      this.$store.dispatch('zoom_to', {
         zoom: this.zoom * scale, 
         center
       })
