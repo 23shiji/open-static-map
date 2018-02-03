@@ -13,9 +13,9 @@ div.loc_pin(ref="pinDom", :style="pin_style")
     v-if="loc.pin.label && display_label",
     :style="name_style", 
     @click="show",
-    @touchend="show"
+    @touchend="show",
+    v-html="loc.name"
     )
-    | {{ loc.name }}
 </template>
 <script>
 import {MapPos} from '../helpers/map_pos'
