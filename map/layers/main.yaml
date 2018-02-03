@@ -26,24 +26,6 @@ layers:
     offset:
       x: 0
       y: 0
-- name: 树林
-  images:
-  - path: map/layers/layer_default/min/forest.svg
-    width:  6243
-    height: 3121
-    offset:
-      x: 0
-      y: 0
-- name: 装饰植物
-  zoom:
-    gte: 10
-  images:
-  - path: map/layers/layer_default/min/bush.svg
-    width:  6243
-    height: 3121
-    offset:
-      x: 0
-      y: 0
 - images:
   - path: map/layers/layer_default/min/road.svg
     width:  6243
@@ -64,6 +46,24 @@ layers:
     gte: 6
   images:
   - path: map/layers/layer_default/min/house.svg
+    width:  6243
+    height: 3121
+    offset:
+      x: 0
+      y: 0
+- name: 树林
+  images:
+  - path: map/layers/layer_default/min/forest.svg
+    width:  6243
+    height: 3121
+    offset:
+      x: 0
+      y: 0
+- name: 装饰植物
+  zoom:
+    gte: 10
+  images:
+  - path: map/layers/layer_default/min/bush.svg
     width:  6243
     height: 3121
     offset:

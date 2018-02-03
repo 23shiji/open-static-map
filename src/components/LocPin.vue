@@ -48,16 +48,22 @@ export default {
     icon_style(){
       let [px, py] = this.pin_screen_pos
       let {icon} = this.loc.pin
-      let x = Math.floor(px + icon.offset.x)
-      let y = Math.floor(py + icon.offset.y)
+      let x = px + icon.offset.x
+      let y = py + icon.offset.y
       return `left: ${x}px; top: ${y}px; ${icon.style ? icon.style : ''};`
     },
     name_style(){
       let [px, py] = this.pin_screen_pos
       let {label} = this.loc.pin
       let cw = label.width
-      let x = Math.floor(px - cw / 2)
-      let y = Math.floor(py)
+      let x, y
+      if(label.offset){
+        x = px + label.offset.x
+        y = py + label.offset.y
+      }else{
+        x = px - cw / 2
+        y = py
+      }
       return `left: ${x}px; top: ${y}px; width: ${cw}px; ${label.style ? label.style : ''};`
     },
     pin_style(){
