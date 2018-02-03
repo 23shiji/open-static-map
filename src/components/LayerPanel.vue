@@ -9,7 +9,11 @@ div
     .collection-item(@click="$store.commit('set_display_pins', !$store.state.display_pins)")
         span.title
           input#displayPinCheckbox(type="checkbox", v-model="$store.state.display_pins")
-          label(for="displayPinCheckbox`") Pins
+          label(for="displayPinCheckbox`") Locations
+    .collection-item(@click="$store.commit('set_location_label_display', !$store.state.display_location_labels)")
+        span.title
+          input#displayPinCheckbox(type="checkbox", v-model="$store.state.display_location_labels")
+          label(for="displayPinCheckbox`") Pin Labels
     template(v-for="(group, index) in $store.state.groups")
       .collection-item(@click="$store.commit('set_group_display', {index, display: !group.display})")
         span.title
