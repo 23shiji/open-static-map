@@ -30,7 +30,8 @@ export default new Vuex.Store({
     ruler_points: null,
     ruler_distance: 0,
     plugins: [],
-    event_callbacks: {}
+    event_callbacks: {},
+    display_location_labels: true,
   },
   getters: {
     displayed_map_width(state){

@@ -10,7 +10,7 @@ div.loc_pin(ref="pinDom", :style="pin_style")
     @touchend="show"
     )
   div.loc_name(
-    v-if="loc.pin.label && display_label",
+    v-if="loc.pin.label && display_label && $store.state.display_location_labels",
     :style="name_style", 
     @click="show",
     @touchend="show",

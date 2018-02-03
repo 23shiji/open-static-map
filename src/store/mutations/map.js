@@ -56,3 +56,7 @@ export function set_display_pins(state, b){
 export function set_group_display(state, {index, display}){
   state.groups[index].display = display
 }
+
+export function set_location_label_display(state, d){
+  state.display_location_labels = d
+}
