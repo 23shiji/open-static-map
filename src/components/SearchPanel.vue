@@ -19,7 +19,7 @@ div
                   template(v-if="loc.pin.icon")
                     img.circle.loc-icon-collection(:src="loc.pin.icon.path")
                   i.material-icons.circle(v-else) location_off
-                  span.title {{loc.name}}
+                  span.title(v-html="loc.name")
                   p {{loc.tags.join(", ")}}
             .collection-item(v-else)
               span.title 没有相符的结果

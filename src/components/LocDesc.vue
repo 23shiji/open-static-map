@@ -1,6 +1,6 @@
 <template lang="jade">
 div#locDesc.z-depth-4.white
-  h4 {{$store.state.current_location.name}}
+  h4(v-html="$store.state.current_location.name")
   div
     template(v-for="(t, index) in $store.state.current_location.tags")
       .chip(@click="view_tag(t)") {{t}}
