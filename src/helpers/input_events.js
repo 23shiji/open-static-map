@@ -88,10 +88,17 @@ export function on_touch_start(evt){
   evt.preventDefault()
 }
 
+let fake_end_touch_timer = null
 export function on_touch_move(evt){
   if(evt.touches.length == 1){
     let t = evt.touches[0]
     this.moving([t.pageX, t.pageY])
+    if(fake_end_touch_timer){
+      clearTimeout(fake_end_touch_timer)
+    }
+    fake_end_touch_timer = setTimeout(() => {
+      this.send_stop_moving_event([t.pageX, t.pageY])
+    },1000)
   }else{
     if(!touch_zoom_stat.moving) return;
     let t1 = evt.touches[0]
@@ -134,13 +141,17 @@ export function moving([x, y]){
   mouse_move_stat.y = y
 }
 
-export function stop_moving([px, py]){
-  mouse_move_stat.moving = false
+export function send_stop_moving_event([px, py]){
   let vw = window.innerWidth
   let vh = window.innerHeight
   let x = this.x + (px - vw / 2) / this.zoom
   let y = this.y + (py - vh / 2) / this.zoom
   this.$store.dispatch('on_user_click', [x, y])
+}
+
+export function stop_moving([px, py]){
+  mouse_move_stat.moving = false
+  this.send_stop_moving_event([px, py])
 }
 
 export function key_dmove(dx, dy){

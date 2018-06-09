@@ -3,7 +3,6 @@
   #map-container
     template(v-show="$store.state.data_loaded")
       map-view
-      custom-elements(v-if="$store.state.information")
       status-panel
       search-panel
       measure-distance
@@ -11,6 +10,7 @@
       controller
       drawer(v-if="$store.state.information && $store.state.information.menu")
       loc-desc(v-if="$store.state.current_location")
+      custom-elements(v-if="$store.state.information")
     template(v-if="!$store.state.data_loaded")
       h1 Loading
 </template>
