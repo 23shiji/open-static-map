@@ -60,7 +60,7 @@ export function load_config_files({commit, state}){
       }else{
         return Promise.all(info.plugins.map(plg => {
           return Promise.all([
-            axios.get(plg.html).then(res => res.data),
+            plg.html ? axios.get(plg.html).then(res => res.data): null,
             plg.css,
             plg.javascript
           ])

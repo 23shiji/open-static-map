@@ -1,7 +1,8 @@
 <template lang="jade">
 div#custom_elements
   template(v-for="plg in $store.state.plugins")
-    div(v-html="plg.html")
+    template(v-if="plg.html")
+      div(v-html="plg.html")
 </template>
 <script>
 export default {
@@ -34,6 +35,7 @@ export default {
   },
   created(){
     let plugins = this.$store.state.plugins
+    console.log(plugins)
     if(!plugins) return;
     const init_callbacks = []
     window.plugin_on_exit = (func) => {
