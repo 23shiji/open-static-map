@@ -4,6 +4,7 @@ Vue.use(Vuex)
 
 import mutations from './mutations/index'
 import actions from './actions/index'
+import {MapPos} from '../helpers/map_pos'
 
 export default new Vuex.Store({
   state: {
@@ -41,6 +42,9 @@ export default new Vuex.Store({
     displayed_map_height(state){
       let vh = window.innerHeight
       return vh / state.zoom
+    },
+    map_pos(state){
+      return new MapPos(state.map_info)
     }
   },
   mutations,
