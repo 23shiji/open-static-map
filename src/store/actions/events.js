@@ -12,17 +12,17 @@ export function emit_event({state}, {event, payload}){
 }
 export function move_to({commit, dispatch}, payload){
   commit('move_to', payload)
-  // dispatch('emit_event', {
-  //   event: 'move',
-  //   payload
-  // })
+  dispatch('emit_event', {
+    event: 'move',
+    payload
+  })
 }
 export function zoom_to({commit, dispatch}, payload){
   commit('zoom_to', payload)
-  // dispatch('emit_event', {
-  //   event: 'zoom',
-  //   payload
-  // })
+  dispatch('emit_event', {
+    event: 'zoom',
+    payload
+  })
 }
 
 export function on_user_click({dispatch, state}, [x, y]){
